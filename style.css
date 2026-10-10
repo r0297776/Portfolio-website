@@ -704,6 +704,27 @@ body.presentatie .presentatie-hud {
     font-variant-numeric: tabular-nums;
 }
 
+/* ===== Conceptweergave: melding onderaan, alleen lokaal ===== */
+.concept-balk {
+    position: fixed;
+    left: 50%;
+    bottom: 1rem;
+    z-index: 2001;
+    transform: translateX(-50%);
+    padding: 0.35rem 1rem;
+    border: 1.5px dashed #d9a521;
+    border-radius: 999px;
+    background: rgba(247, 199, 84, 0.9);
+    color: var(--ink);
+    font-size: 0.8rem;
+    font-weight: 500;
+    pointer-events: none;
+}
+
+body.presentatie .concept-balk {
+    display: none;
+}
+
 /* ===== Nog in te vullen (geel gestippeld) — verdwijnt zodra je de class weghaalt ===== */
 .invullen {
     background: rgba(247, 199, 84, 0.2);
@@ -894,6 +915,25 @@ body.presentatie .presentatie-hud {
     color: var(--primary);
 }
 
+/* Pijlen tussen de drie stappen van de werkplekopdracht (vanaf tablet) */
+@media (min-width: 768px) {
+    .opdracht-stappen > div:not(:last-child) .kaart {
+        position: relative;
+    }
+
+    .opdracht-stappen > div:not(:last-child) .kaart::after {
+        content: "→";
+        position: absolute;
+        top: 50%;
+        right: -1.3rem;
+        z-index: 1;
+        transform: translateY(-50%);
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--ink);
+    }
+}
+
 .prioritair {
     margin-top: 2rem;
 }
@@ -1018,8 +1058,32 @@ body.presentatie .presentatie-hud {
     margin-bottom: 1.5rem;
 }
 
+/* Kop van een projectpagina (bv. thuisnetwerk.html) */
+.project-kop {
+    padding-top: 8rem;
+    border-top: none;
+}
+
+/* Foto/schema op een rol-slide (klikbaar naar het project) */
+.rol-foto {
+    display: block;
+    max-width: 340px;
+    margin-top: 1.25rem;
+    transition: box-shadow 0.2s;
+    border-radius: 1rem;
+}
+
+.rol-foto:hover {
+    box-shadow: 6px 6px 0 var(--primary);
+}
+
+/* Verwijzing naar een eigen project bij een rol */
+.rol-bewijzen .project-link > span:first-child {
+    background: var(--accent);
+}
+
 .bewijs-info dt {
-    margin-top: 1rem;
+    margin-top: 0.75rem;
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.1em;

@@ -7,6 +7,20 @@
 // Is een slide langer dan het scherm, dan scrolt die eerst stap voor stap verder.
 // Elementen met class "stap" verschijnen één voor één bij "volgende", voor er naar
 // de volgende slide gesprongen wordt (zoals animaties in PowerPoint).
+// Conceptweergave: op je eigen computer (Live Server, localhost of een geopend bestand) worden
+// de onafgewerkte delen (hidden + data-concept) getoond. Op de live site blijven ze verborgen.
+(function () {
+    var lokaal = location.protocol === 'file:' || /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
+    if (!lokaal) return;
+    var delen = document.querySelectorAll('[data-concept]');
+    if (!delen.length) return;
+    delen.forEach(function (el) { el.hidden = false; });
+    var balk = document.createElement('div');
+    balk.className = 'concept-balk';
+    balk.textContent = 'Conceptweergave: ' + delen.length + ' verborgen delen zichtbaar (alleen op je eigen computer, niet live)';
+    document.body.appendChild(balk);
+})();
+
 // Bij vernieuwen (F5) altijd bovenaan beginnen, ook als er #iets in de adresbalk staat.
 // Een gewone link met #anker (bv. vanaf de cv-pagina) blijft wel werken.
 (function () {
