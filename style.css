@@ -30,9 +30,8 @@ a {
 
 /* ===== Navigatie ===== */
 .navbar {
-    background: rgba(248, 243, 236, 0.9);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: var(--bg);
+    border-bottom: 1px solid var(--line-soft);
     padding: 1rem 0;
 }
 
@@ -192,6 +191,11 @@ a {
     background: linear-gradient(transparent 62%, var(--accent) 62%, var(--accent) 92%, transparent 92%);
 }
 
+/* Blauwe veeg in plaats van geel (titel BlueIT): lichtere tint van hun merkkleur, zelfde vorm als de gele.
+   Gekozen door Yannick; het donkere merkblauw #03215e maakte de letters onleesbaar. */
+.section-title strong.streep-blauw {
+    background: linear-gradient(transparent 62%, #6f8fd8 62%, #6f8fd8 92%, transparent 92%);
+}
 .lead-text {
     font-size: 1.1rem;
     line-height: 1.8;
@@ -214,7 +218,6 @@ a {
 }
 
 .project:hover {
-    transform: translateY(-4px);
     box-shadow: 6px 6px 0 var(--primary);
 }
 
@@ -592,15 +595,18 @@ button.btn-pill {
 }
 
 /* ===== Grotere schermen (tablet en desktop) ===== */
-@media (min-width: 768px) {
+/* Menu naast elkaar vanaf 992px (navbar-expand-lg) */
+@media (min-width: 992px) {
     .navbar-nav {
-        gap: 2rem;
+        gap: 1.75rem;
     }
 
     .nav-link {
         padding: 0.5rem 0;
     }
+}
 
+@media (min-width: 768px) {
     .section {
         padding: 7rem 0;
     }
@@ -643,6 +649,625 @@ body.presentatie,
 body.presentatie a,
 body.presentatie button {
     cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='14' fill='%23f7c754' fill-opacity='0.55' stroke='%231b2a3a' stroke-width='3'/%3E%3C/svg%3E") 20 20, auto;
+}
+
+/* In presentatiemodus: geen menubalk, elke slide precies één scherm */
+body.presentatie .navbar {
+    display: none;
+}
+
+body.presentatie .slide {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem 0;
+}
+
+body.presentatie .slide > .container {
+    width: 100%;
+}
+
+/* Voortgangsbalk + teller + timer onderaan (alleen in presentatiemodus) */
+.presentatie-hud {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1999;
+    pointer-events: none;
+}
+
+body.presentatie .presentatie-hud {
+    display: block;
+}
+
+.hud-balk {
+    height: 4px;
+    width: 0;
+    background: var(--primary);
+    transition: width 0.3s;
+}
+
+.hud-info {
+    position: absolute;
+    left: 1rem;
+    bottom: 0.75rem;
+    padding: 0.2rem 0.7rem;
+    border-radius: 999px;
+    background: rgba(248, 243, 236, 0.9);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+}
+
+/* ===== Nog in te vullen (geel gestippeld) — verdwijnt zodra je de class weghaalt ===== */
+.invullen {
+    background: rgba(247, 199, 84, 0.2);
+    outline: 1.5px dashed #d9a521;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* ===== Hoofdpagina: presentatie-opbouw ===== */
+
+/* 01 Wie ben ik */
+.wie-foto {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid var(--line);
+    object-fit: cover;
+}
+
+/* Mijn logo op de titelslide */
+.hero-logo {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* "Achter het scherm" / "Buiten het scherm" */
+.wereld-label {
+    margin-bottom: 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+/* Hobby's met icoontjes in de stijl van het logo */
+.hobbys {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.hobbys li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.85rem 0.4rem 0.5rem;
+    border: 2px solid var(--line);
+    border-radius: 999px;
+    background: var(--surface);
+    font-weight: 500;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.hobbys svg {
+    flex-shrink: 0;
+    width: 1.75rem;
+    height: 1.75rem;
+    stroke: #111;
+    stroke-width: 2.2;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+}
+
+/* "Hallo, ik ben Yannick." naast de foto */
+.wie-titel {
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+}
+
+/* Persoonlijke zin op "Wie ben ik?" */
+.board-zin {
+    font-weight: 700;
+    color: var(--ink);
+}
+
+/* Korte feiten op "Wie ben ik?" */
+.wie-feiten {
+    margin: 0;
+}
+
+.wie-feiten div {
+    display: grid;
+    grid-template-columns: 6.5rem 1fr;
+    gap: 1rem;
+    padding: 0.45rem 0;
+    border-bottom: 1px solid var(--line-soft);
+}
+
+.wie-feiten dt {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-top: 0.15rem;
+}
+
+.wie-feiten dd {
+    margin: 0;
+    font-weight: 500;
+}
+
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem 2.5rem;
+    margin: 2rem 0;
+}
+
+.stat-number {
+    display: block;
+    font-size: clamp(2.2rem, 6vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1;
+}
+
+.stat-caption {
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+/* Kaarten (werkplek, opdracht, reflectie) */
+.kaart {
+    padding: 1.75rem;
+    border: 2px solid var(--line);
+    border-radius: 1rem;
+    background: var(--surface);
+}
+
+.kaart p {
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.kaart-titel {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.kaart-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    background: var(--primary);
+    font-weight: 700;
+}
+
+/* Nummer in de titel van een kaart, bv. de drie takken van BlueIT */
+.kaart-titel .kaart-num {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin: 0 0.6rem 0 0;
+    font-size: 0.75rem;
+    letter-spacing: 0;
+    vertical-align: middle;
+}
+
+.kaart-noot {
+    margin: 1.25rem 0 0;
+    font-size: 0.85rem;
+}
+
+.kaart-lijst {
+    margin: 0;
+    padding-left: 1.1rem;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.kaart-lijst li {
+    margin-bottom: 0.4rem;
+}
+
+.kaart-lijst li::marker {
+    color: var(--primary);
+}
+
+.prioritair {
+    margin-top: 2rem;
+}
+
+/* Rol-labels: genummerd zoals in het rollenwiel */
+.rol-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.3rem 0.9rem 0.3rem 0.3rem;
+    border: 1.5px solid var(--line);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--ink);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+.rol-badge b {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    background: var(--primary);
+    color: var(--ink);
+    font-size: 0.8rem;
+}
+
+.rol-badge:hover {
+    background: var(--ink);
+    color: var(--bg);
+}
+
+/* 04 Overzicht van de bewijsstukken + lijst per rol */
+.bewijs-overzicht,
+.rol-bewijzen {
+    display: grid;
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.bewijs-overzicht a,
+.rol-bewijzen a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    border: 2px solid var(--line);
+    border-radius: 1rem;
+    background: var(--surface);
+    font-weight: 500;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.bewijs-overzicht a > span:first-child,
+.rol-bewijzen a > span:first-child {
+    flex-shrink: 0;
+    padding: 0.1rem 0.6rem;
+    border-radius: 999px;
+    background: var(--primary);
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.bewijs-overzicht a:hover,
+.rol-bewijzen a:hover {
+    box-shadow: 6px 6px 0 var(--primary);
+}
+
+.rol-bewijzen li.invullen {
+    padding: 1rem 1.25rem;
+    border-radius: 1rem;
+    color: var(--muted);
+}
+
+/* Eén bewijsstuk */
+.bewijs-beeld {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 4 / 3;
+    padding: 2rem;
+    border-radius: 1rem;
+    color: var(--muted);
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Gebruik deze class voor de echte afbeelding: <img class="bewijs-img" ...> */
+.bewijs-img {
+    width: 100%;
+    height: auto;
+    border: 2px solid var(--line);
+    border-radius: 1rem;
+}
+
+.bewijs-num {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.bewijs-titel {
+    display: inline-block;
+    margin: 0.5rem 0 1.25rem;
+    font-size: clamp(1.8rem, 5vw, 2.75rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+.bewijs-info {
+    margin-bottom: 1.5rem;
+}
+
+.bewijs-info dt {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.bewijs-info dd {
+    display: inline-block;
+    margin: 0.25rem 0 0;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+/* 05 Rollenwiel */
+.rollen-wiel {
+    display: block;
+    width: 100%;
+    height: auto;
+    font-family: var(--font);
+}
+
+/* Geen onderlijning op de rollen (Bootstrap onderlijnt alle links) */
+.rollen-wiel a,
+.rollen-wiel text {
+    text-decoration: none;
+}
+
+.wiel-lijnen line {
+    stroke: var(--ink);
+    stroke-width: 2;
+}
+
+.wiel-centrum > circle:first-of-type {
+    fill: var(--ink);
+    transition: fill 0.2s;
+}
+
+.wiel-centrum:hover > circle:first-of-type {
+    fill: #2c4258;
+}
+
+.wiel-centrum text {
+    fill: var(--bg);
+    font-size: 26px;
+    font-weight: 700;
+    text-anchor: middle;
+}
+
+.wiel-rol rect {
+    fill: var(--surface);
+    stroke: var(--ink);
+    stroke-width: 2;
+    transition: fill 0.2s;
+}
+
+.wiel-rol:hover rect,
+.wiel-rol:focus rect {
+    fill: var(--primary);
+}
+
+.wiel-rol text {
+    fill: var(--ink);
+    font-size: 22px;
+    font-weight: 700;
+    text-anchor: middle;
+}
+
+.rollen-wiel .wiel-nr {
+    fill: var(--primary);
+    stroke: var(--ink);
+    stroke-width: 2;
+}
+
+.rollen-wiel .wiel-nr-tekst {
+    fill: var(--ink);
+    font-size: 20px;
+    font-weight: 700;
+    text-anchor: middle;
+}
+
+/* Eén rol */
+.rol-nummer {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-bottom: 1rem;
+    border: 2px solid var(--line);
+    border-radius: 50%;
+    background: var(--primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.rol-titel {
+    margin-bottom: 1rem;
+    font-size: clamp(2.2rem, 7vw, 4rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+}
+
+@media (min-width: 768px) {
+    .bewijs-overzicht {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 992px) {
+    .wie-foto {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* ===== Terminalvenster (tracert / ping) ===== */
+.terminal {
+    overflow: hidden;
+    border: 2px solid var(--line);
+    border-radius: 1rem;
+    background: var(--ink);
+    box-shadow: 8px 8px 0 var(--primary);
+}
+
+.terminal-balk {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.terminal-balk > span:not(.terminal-titel) {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.terminal-titel {
+    margin-left: 0.5rem;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.terminal-body {
+    padding: 1.25rem 1.25rem 1.5rem;
+    font-family: "Cascadia Code", Consolas, "Courier New", monospace;
+    font-size: 0.8rem;
+    line-height: 1.7;
+    color: #e9e4dc;
+}
+
+/* Alleen binnen een regel spaties bewaren (niet de inspringing van de HTML-code) */
+.terminal-body > div {
+    white-space: pre-wrap;
+}
+
+.terminal-body .t-leeg {
+    height: 1.7em;
+}
+
+.t-prompt {
+    color: var(--primary);
+}
+
+.t-cmd {
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.t-dim {
+    color: rgba(233, 228, 220, 0.6);
+}
+
+.t-ok {
+    color: var(--accent);
+}
+
+/* Eén hop: nummer · jaar · omschrijving */
+.t-hop {
+    display: grid;
+    grid-template-columns: 2.5ch 4.5ch 1fr;
+    gap: 1.5ch;
+    color: rgba(233, 228, 220, 0.6);
+}
+
+.t-hop.t-it {
+    color: #e9e4dc;
+}
+
+.t-hop > span:nth-child(2) {
+    color: var(--primary);
+}
+
+.t-hop.t-doel {
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* What's next: de toekomst, nog niet "bereikt" */
+.t-hop.t-next {
+    color: #e9e4dc;
+}
+
+.t-hop.t-next > span:nth-child(2) {
+    color: var(--accent);
+}
+
+.t-hop.t-timeout {
+    color: rgba(233, 228, 220, 0.45);
+}
+
+.t-cursor {
+    margin-left: 0.15em;
+    color: var(--primary);
+    animation: knipper 1s steps(1) infinite;
+}
+
+@keyframes knipper {
+    50% {
+        opacity: 0;
+    }
+}
+
+.t-hop em {
+    font-style: normal;
+    font-weight: 400;
+    color: var(--accent);
+}
+
+@media (min-width: 768px) {
+    .terminal-body {
+        font-size: 0.9rem;
+    }
+}
+
+/* ===== Stap voor stap tonen (alleen in presentatiemodus) ===== */
+body.presentatie .stap {
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.35s, transform 0.35s;
+}
+
+body.presentatie .stap.getoond {
+    opacity: 1;
+    transform: none;
 }
 
 /* Minder animatie voor wie dat zo ingesteld heeft */

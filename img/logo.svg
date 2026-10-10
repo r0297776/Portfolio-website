@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 145" width="780" height="435">
+  <defs>
+    <clipPath id="frame">
+      <rect x="4" y="4" width="252" height="134" rx="8"/>
+    </clipPath>
+  </defs>
+
+  <g stroke="#111" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+    <!-- achtergrond -->
+    <rect x="4" y="4" width="252" height="134" rx="8" fill="#F7EEE3" stroke="none"/>
+
+    <g clip-path="url(#frame)">
+      <!-- zon -->
+      <g stroke-width="2.2">
+        <line x1="225" y1="13" x2="225" y2="18"/>
+        <line x1="225" y1="42" x2="225" y2="47"/>
+        <line x1="208" y1="30" x2="213" y2="30"/>
+        <line x1="237" y1="30" x2="242" y2="30"/>
+        <line x1="213" y1="18" x2="216.5" y2="21.5"/>
+        <line x1="233.5" y1="38.5" x2="237" y2="42"/>
+        <line x1="237" y1="18" x2="233.5" y2="21.5"/>
+        <line x1="216.5" y1="38.5" x2="213" y2="42"/>
+      </g>
+      <circle cx="225" cy="30" r="9" fill="#F9C846"/>
+
+      <!-- bergen -->
+      <polygon points="55,112 115,50 160,96 182,80 240,112" fill="#93C0E8"/>
+      <!-- sneeuw -->
+      <polygon points="115,50 132.6,68 128,73 122,69 116,76 109,69 103,74 97,68" fill="#FFFFFF"/>
+      <polygon points="182,80 197.5,88 192,92 186,88 180,93 175,89 171,88" fill="#FFFFFF"/>
+
+      <!-- water -->
+      <path d="M0,110 Q15,105 30,110 T60,110 T90,110 T120,110 T150,110 T180,110 T210,110 T240,110 T270,110 V150 H0 Z" fill="#4F8FCF"/>
+      <path d="M100,122 q8,-4 16,0 t16,0" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+      <path d="M160,130 q8,-4 16,0 t16,0" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+      <path d="M205,119 q7,-3.5 14,0" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+
+      <!-- golf -->
+      <path d="M196,127 C204,114 212,103 222,103 C214,106 211,115 219,118 C226,120 231,114 233,110 C236,116 238,122 242,127 Z" fill="#4F8FCF" stroke-width="2"/>
+      <path d="M206,111 C212,105 216,103 222,103" fill="none" stroke="#FFFFFF" stroke-width="1.8"/>
+
+      <!-- surfer -->
+      <path d="M170,129 Q182,132 194,127" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+      <rect x="171" y="123" width="22" height="3.5" rx="1.75" fill="#F28C38" stroke-width="2" transform="rotate(-6 182 125)"/>
+      <g stroke-width="2.2" fill="none">
+        <line x1="183" y1="110" x2="182" y2="117"/>
+        <polyline points="177,123 182,117 188,122"/>
+        <polyline points="175,111 183,111.5 191,109"/>
+      </g>
+      <circle cx="183.5" cy="106" r="2.8" fill="#111" stroke="none"/>
+
+      <!-- oever -->
+      <path d="M0,104 H48 Q70,106 78,140 H0 Z" fill="#8CC08A"/>
+
+      <!-- boom -->
+      <rect x="35" y="94" width="7" height="14" fill="#8A5A3B"/>
+      <polygon points="38.5,46 24,68 53,68" fill="#3E8E5A"/>
+      <polygon points="38.5,58 20,82 57,82" fill="#3E8E5A"/>
+      <polygon points="38.5,70 16,96 61,96" fill="#3E8E5A"/>
+    </g>
+
+    <!-- kader -->
+    <rect x="4" y="4" width="252" height="134" rx="8" fill="none"/>
+  </g>
+</svg>
