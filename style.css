@@ -1,0 +1,657 @@
+/* ===== Kleuren en basis ===== */
+:root {
+    --bg: #f8f3ec;        /* licht warm beige */
+    --surface: #fdfbf8;   /* iets lichter, voor kaarten */
+    --ink: #1b2a3a;       /* donkerblauw */
+    --muted: #55626f;
+    --line: #1b2a3a;
+    --line-soft: #e2d8cb;
+    --primary: #9cb4bc;   /* hoofdkleur: grijsblauw */
+    --primary-soft: #fdfbf8;
+    --accent: #f7c754;    /* accent: geel (markeerstrepen in titels) */
+    --font: 'Inter', system-ui, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+}
+
+body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: var(--ink);
+}
+
+/* ===== Navigatie ===== */
+.navbar {
+    background: rgba(248, 243, 236, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: var(--ink);
+}
+
+.navbar-brand span {
+    color: var(--primary);
+}
+
+.navbar-toggler {
+    border: none;
+    padding: 0.25rem;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.nav-link {
+    color: var(--ink);
+    font-weight: 500;
+    padding: 0.75rem 0;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: var(--muted);
+}
+
+/* ===== Hero ===== */
+.hero {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    padding: 7rem 0 4rem;
+}
+
+.hero-title {
+    font-size: clamp(2.6rem, 10vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin: 0.75rem 0 1.5rem;
+}
+
+.hero-title span {
+    display: block;
+    font-size: 0.5em;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    margin-top: 0.5rem;
+}
+
+.hero-lead {
+    max-width: 30rem;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.hero-visual {
+    border: 2px solid var(--line);
+    border-radius: 1rem;
+    background: var(--primary-soft);
+    padding: 2rem 1.5rem;
+}
+
+.hero-visual svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.hero-visual .lines line {
+    stroke: var(--ink);
+    stroke-width: 2;
+}
+
+.hero-visual .node-main {
+    fill: var(--ink);
+}
+
+.hero-visual .node,
+.hero-visual .node-small {
+    stroke: var(--ink);
+    stroke-width: 2;
+}
+
+.hero-visual .node {
+    fill: var(--primary);
+}
+
+.hero-visual .node-small {
+    fill: var(--primary);
+}
+
+/* ===== Knoppen ===== */
+.btn-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.7rem 1.5rem;
+    border: 2px solid var(--line);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--ink);
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-pill:hover {
+    background: var(--ink);
+    color: var(--bg);
+}
+
+.btn-pill-dark {
+    background: var(--ink);
+    color: var(--bg);
+}
+
+.btn-pill-dark:hover {
+    background: transparent;
+    color: var(--ink);
+}
+
+/* ===== Secties ===== */
+.section {
+    padding: 5rem 0;
+    border-top: 1px solid var(--line-soft);
+}
+
+.section-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.section-title {
+    font-size: clamp(2rem, 6vw, 3.25rem);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+}
+
+.section-title strong,
+.contact-title strong {
+    font-weight: 700;
+    /* gele markeerstift-streep onder het woord */
+    background: linear-gradient(transparent 62%, var(--accent) 62%, var(--accent) 92%, transparent 92%);
+}
+
+.lead-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--muted);
+    max-width: 40rem;
+}
+
+.text-muted-custom {
+    color: var(--muted);
+}
+
+/* ===== Projecten ===== */
+.project {
+    height: 100%;
+    padding: 1.75rem;
+    border: 2px solid var(--line);
+    border-radius: 1rem;
+    background: var(--surface);
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.project:hover {
+    transform: translateY(-4px);
+    box-shadow: 6px 6px 0 var(--primary);
+}
+
+.project-num {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    background: var(--primary);
+    margin-bottom: 2rem;
+}
+
+.project h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.project p {
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+}
+
+.tags li {
+    padding: 0.25rem 0.8rem;
+    border: 1.5px solid var(--line);
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* ===== Skills ===== */
+.skill {
+    display: grid;
+    gap: 0.5rem;
+    padding: 2rem 0;
+    border-top: 2px solid var(--line);
+}
+
+.skill h3 {
+    font-size: clamp(1.75rem, 5vw, 2.75rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.skill p {
+    color: var(--muted);
+    line-height: 1.7;
+    margin: 0;
+    max-width: 36rem;
+}
+
+/* ===== Contact ===== */
+.contact-title {
+    font-size: clamp(2.2rem, 8vw, 4.5rem);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin: 1rem 0 1.5rem;
+}
+
+.contact-mail {
+    margin-top: 2rem;
+    color: var(--muted);
+    overflow-wrap: anywhere;
+}
+
+/* ===== CV-pagina ===== */
+.nav-link.active {
+    text-decoration: underline;
+    text-decoration-color: var(--primary);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 6px;
+}
+
+.cv-header {
+    padding: 8rem 0 4rem;
+}
+
+.cv-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 2px solid var(--line);
+    object-fit: cover;
+}
+
+.cv-name {
+    font-size: clamp(2.2rem, 8vw, 4rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin: 0.5rem 0;
+}
+
+.cv-role {
+    font-size: 1.15rem;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+}
+
+button.btn-pill {
+    cursor: pointer;
+}
+
+.cv-heading {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--line);
+    margin-bottom: 0;
+}
+
+.cv-item {
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--line-soft);
+}
+
+.cv-item h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.cv-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+}
+
+.cv-date {
+    font-weight: 700;
+    color: var(--ink);
+}
+
+.cv-status {
+    padding: 0.1rem 0.6rem;
+    border: 1.5px solid var(--line);
+    border-radius: 999px;
+    background: var(--primary);
+    font-weight: 700;
+    color: var(--ink);
+}
+
+.tags:empty {
+    display: none;
+}
+
+.cv-org {
+    font-weight: 500;
+    color: var(--muted);
+    margin: 0.15rem 0 0;
+}
+
+.cv-item ul {
+    margin: 1rem 0 0;
+    padding-left: 1.1rem;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.cv-item li::marker {
+    color: var(--primary);
+}
+
+.cv-note {
+    margin: 0.75rem 0 0;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.cv-side {
+    padding: 1.5rem;
+    border: 2px solid var(--line);
+    border-radius: 1rem;
+    background: var(--surface);
+    margin-bottom: 1.25rem;
+}
+
+.cv-side-heading {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.cv-side .tags {
+    margin-top: 0;
+}
+
+.cv-langs {
+    margin: 0;
+}
+
+.cv-langs div {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--line-soft);
+}
+
+.cv-langs div:last-child {
+    border-bottom: none;
+}
+
+.cv-langs dt {
+    font-weight: 500;
+}
+
+.cv-langs dd {
+    margin: 0;
+    color: var(--muted);
+}
+
+/* ===== Tijdlijn (cv-pagina) ===== */
+.journey-stats {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.journey-number {
+    display: block;
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1;
+}
+
+.journey-caption {
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+/* Op gsm: verticale tijdlijn */
+.journey {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 1.75rem;
+    border-left: 2px solid var(--line);
+}
+
+.journey-item {
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+.journey-item:last-child {
+    padding-bottom: 0;
+}
+
+/* Bolletje op de lijn: hol = buiten IT, gevuld = IT */
+.journey-item::before {
+    content: "";
+    position: absolute;
+    left: calc(-1.75rem - 9px);
+    top: 0.1rem;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid var(--line);
+    background: var(--bg);
+}
+
+.journey-item.is-it::before {
+    background: var(--primary);
+}
+
+.journey-item.is-now::before {
+    background: var(--ink);
+    box-shadow: 0 0 0 5px var(--primary);
+}
+
+.journey-year {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.35rem;
+}
+
+.journey-item h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 0 0.25rem;
+}
+
+.journey-item p {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin: 0;
+}
+
+/* Gedeelte buiten IT iets zachter */
+.journey-item:not(.is-it) h3,
+.journey-item:not(.is-it) .journey-year {
+    color: var(--muted);
+}
+
+/* Op desktop: horizontale tijdlijn */
+@media (min-width: 992px) {
+    .journey {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 1.5rem;
+        padding: 2.25rem 0 0;
+        border-left: none;
+        border-top: 2px solid var(--line);
+    }
+
+    .journey-item {
+        padding-bottom: 0;
+    }
+
+    .journey-item::before {
+        left: 0;
+        top: calc(-2.25rem - 9px);
+    }
+}
+
+@media (min-width: 768px) {
+    .cv-photo {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+/* Afdrukken / opslaan als PDF */
+@media print {
+    .navbar,
+    .footer,
+    .cv-header .btn-pill {
+        display: none !important;
+    }
+
+    body {
+        background: #fff;
+    }
+
+    .cv-header {
+        padding: 0 0 1.5rem;
+    }
+
+    .section {
+        padding: 0;
+        border: none;
+    }
+
+    .cv-item {
+        break-inside: avoid;
+    }
+}
+
+/* ===== Footer ===== */
+.footer {
+    padding: 2rem 0;
+    border-top: 1px solid var(--line-soft);
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+/* ===== Grotere schermen (tablet en desktop) ===== */
+@media (min-width: 768px) {
+    .navbar-nav {
+        gap: 2rem;
+    }
+
+    .nav-link {
+        padding: 0.5rem 0;
+    }
+
+    .section {
+        padding: 7rem 0;
+    }
+
+    .skill {
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
+    }
+}
+
+@media (min-width: 992px) {
+    .hero-visual {
+        padding: 3rem 2.5rem;
+    }
+}
+
+/* ===== Presentatiemodus (toets P) ===== */
+.presentatie-label {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    z-index: 2000;
+    padding: 0.6rem 1.2rem;
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--bg);
+    font-weight: 500;
+    font-size: 0.9rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.presentatie-label.zichtbaar {
+    opacity: 1;
+}
+
+/* Grotere muisaanwijzer, zodat de jury goed ziet waar je wijst */
+body.presentatie,
+body.presentatie a,
+body.presentatie button {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='14' fill='%23f7c754' fill-opacity='0.55' stroke='%231b2a3a' stroke-width='3'/%3E%3C/svg%3E") 20 20, auto;
+}
+
+/* Minder animatie voor wie dat zo ingesteld heeft */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    * {
+        transition: none !important;
+    }
+}

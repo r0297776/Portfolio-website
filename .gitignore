@@ -1,0 +1,12 @@
+# Interne notities voor Claude: blijven lokaal, niet op GitHub
+CLAUDE.md
+PROJECTLOG.md
+
+# Instellingen van editors en tools
+.vscode/
+.claude/
+
+# Systeembestanden
+Thumbs.db
+desktop.ini
+.DS_Store

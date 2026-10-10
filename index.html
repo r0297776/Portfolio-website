@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yannick Van Duppen | Systeem- &amp; netwerkbeheer</title>
+    <meta name="description" content="Portfolio van Yannick Van Duppen, afstudeerportfolio systeem- en netwerkbeheer aan Thomas More Geel.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23111'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='700'%3EY%3C/text%3E%3C/svg%3E">
+
+    <!-- Lettertype -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap, daarna eigen stijlen (zodat die voorrang krijgen) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigatie -->
+    <nav class="navbar navbar-expand-md fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#top">Yannick<span>.</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Menu openen">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#over">Over mij</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projecten">Projecten</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cv.html">CV</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero" id="top">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <!-- Tekst (op gsm eerst, op desktop rechts) -->
+                <div class="col-12 col-lg-6 order-lg-2">
+                    <p class="section-label">Afstudeerportfolio · Thomas More Geel</p>
+                    <h1 class="hero-title">
+                        Yannick
+                        <span>Systeem- &amp; netwerkbeheer</span>
+                    </h1>
+                    <p class="hero-lead">Een overzicht van de projecten en vaardigheden die ik tijdens mijn opleiding heb opgebouwd: van netwerken en servers tot Linux.</p>
+                    <div class="d-flex flex-wrap align-items-center gap-3">
+                        <a class="btn-pill" href="#projecten">Bekijk projecten</a>
+                        <a class="btn-pill btn-pill-dark" href="#contact">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Illustratie: netwerkschema (later te vervangen door een foto) -->
+                <div class="col-12 col-lg-6 order-lg-1">
+                    <div class="hero-visual">
+                        <svg viewBox="0 0 400 260" aria-hidden="true">
+                            <g class="lines">
+                                <line x1="200" y1="50" x2="100" y2="130"/>
+                                <line x1="200" y1="50" x2="300" y2="130"/>
+                                <line x1="100" y1="130" x2="300" y2="130"/>
+                                <line x1="100" y1="130" x2="55" y2="215"/>
+                                <line x1="100" y1="130" x2="145" y2="215"/>
+                                <line x1="300" y1="130" x2="255" y2="215"/>
+                                <line x1="300" y1="130" x2="345" y2="215"/>
+                            </g>
+                            <rect class="node-main" x="176" y="26" width="48" height="48" rx="10"/>
+                            <circle class="node" cx="100" cy="130" r="18"/>
+                            <circle class="node" cx="300" cy="130" r="18"/>
+                            <rect class="node-small" x="41" y="203" width="28" height="24" rx="5"/>
+                            <rect class="node-small" x="131" y="203" width="28" height="24" rx="5"/>
+                            <rect class="node-small" x="241" y="203" width="28" height="24" rx="5"/>
+                            <rect class="node-small" x="331" y="203" width="28" height="24" rx="5"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Over mij -->
+        <section class="section" id="over">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-12 col-lg-4">
+                        <p class="section-label">01 — Over mij</p>
+                    </div>
+                    <div class="col-12 col-lg-8">
+                        <h2 class="section-title">Ik hou van systemen die <strong>gewoon werken.</strong></h2>
+                        <p class="lead-text">
+                            Ik ben Yannick, laatstejaarsstudent systeem- en netwerkbeheer aan Thomas More Hogeschool in Geel.
+                            Ik werk graag met netwerken, Linux-servers en alles wat erachter zit om een IT-omgeving
+                            vlot en veilig te laten draaien. In dit portfolio toon ik wat ik tijdens mijn opleiding
+                            gerealiseerd heb en hoe ik daarin gegroeid ben.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projecten -->
+        <section class="section" id="projecten">
+            <div class="container">
+                <div class="row g-4 mb-4">
+                    <div class="col-12 col-lg-4">
+                        <p class="section-label">02 — Projecten</p>
+                    </div>
+                    <div class="col-12 col-lg-8">
+                        <h2 class="section-title">Waar ik aan <strong>gewerkt</strong> heb.</h2>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <!-- VOORBEELD: vervang door een eigen project -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="project">
+                            <span class="project-num">01</span>
+                            <h3>Netwerk met VLANs</h3>
+                            <p>Een bedrijfsnetwerk ontworpen en geconfigureerd met meerdere VLANs, inter-VLAN routing en DHCP.</p>
+                            <ul class="tags">
+                                <li>Cisco</li>
+                                <li>Packet Tracer</li>
+                                <li>CCNA</li>
+                            </ul>
+                        </article>
+                    </div>
+
+                    <!-- VOORBEELD: vervang door een eigen project -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="project">
+                            <span class="project-num">02</span>
+                            <h3>Linux-webserver</h3>
+                            <p>Een Ubuntu-server opgezet met een webserver, firewall en SSH-toegang met sleutels.</p>
+                            <ul class="tags">
+                                <li>Linux</li>
+                                <li>Ubuntu Server</li>
+                                <li>Nginx</li>
+                            </ul>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="project">
+                            <span class="project-num">03</span>
+                            <h3>Deze portfolio</h3>
+                            <p>Een responsieve, snelle portfolio-website, gehost via GitHub Pages op mijn eigen domein.</p>
+                            <ul class="tags">
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>Bootstrap</li>
+                                <li>DNS</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="section" id="skills">
+            <div class="container">
+                <div class="row g-4 mb-4">
+                    <div class="col-12 col-lg-4">
+                        <p class="section-label">03 — Skills</p>
+                    </div>
+                    <div class="col-12 col-lg-8">
+                        <h2 class="section-title">Wat ik <strong>kan.</strong></h2>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <h3>CCNA</h3>
+                    <p>Routing en switching, VLANs, subnetting, IP-adressering en het configureren van Cisco-apparatuur.</p>
+                </div>
+                <div class="skill">
+                    <h3>Linux</h3>
+                    <p>Werken met de command line, gebruikers en rechten beheren, services installeren en servers configureren.</p>
+                </div>
+                <div class="skill">
+                    <h3>Webdesign</h3>
+                    <p>Responsieve websites bouwen met HTML, CSS en Bootstrap, zoals deze portfolio.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="section contact" id="contact">
+            <div class="container">
+                <p class="section-label">04 — Contact</p>
+                <h2 class="contact-title">Vragen over mijn <strong>werk?</strong></h2>
+                <p class="lead-text mb-4">Stuur me gerust een berichtje.</p>
+                <div class="d-flex flex-wrap align-items-center gap-4">
+                    <a class="btn-pill btn-pill-dark" href="mailto:vanduppenyannick@gmail.com">Stuur me een mail</a>
+                    <a class="btn-pill" href="https://www.linkedin.com/in/yannick-van-duppen-5a72b3284/" target="_blank" rel="noopener">LinkedIn</a>
+                    <a class="btn-pill" href="cv.html">Bekijk mijn CV</a>
+                </div>
+                <p class="contact-mail">vanduppenyannick@gmail.com</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container d-flex flex-wrap justify-content-between gap-2">
+            <span>© 2026 Yannick Van Duppen</span>
+            <span>partnerup.be</span>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="presentatie.js"></script>
+    <script>
+        // Sluit het gsm-menu nadat je op een link klikt
+        document.querySelectorAll('#menu .nav-link').forEach(function (link) {
+            link.addEventListener('click', function () {
+                var menu = bootstrap.Collapse.getInstance(document.getElementById('menu'));
+                if (menu) menu.hide();
+            });
+        });
+    </script>
+</body>
+</html>

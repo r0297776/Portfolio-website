@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV | Yannick Van Duppen</title>
+    <meta name="description" content="Curriculum vitae van Yannick Van Duppen: software consultant en student systeem- en netwerkbeheer aan Thomas More Geel.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23111'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='700'%3EY%3C/text%3E%3C/svg%3E">
+
+    <!-- Lettertype -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap, daarna eigen stijlen (zodat die voorrang krijgen) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigatie -->
+    <nav class="navbar navbar-expand-md fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Yannick<span>.</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Menu openen">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html#over">Over mij</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#projecten">Projecten</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="cv.html">CV</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Kop -->
+    <header class="cv-header">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row align-items-md-center gap-4 gap-md-5">
+                <img class="cv-photo" src="img/yannick.jpg" alt="Foto van Yannick Van Duppen" width="400" height="400">
+                <div>
+                    <p class="section-label">Curriculum vitae</p>
+                    <h1 class="cv-name">Yannick Van Duppen</h1>
+                    <p class="cv-role">Software consultant / functioneel analist</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a class="btn-pill btn-pill-dark" href="mailto:vanduppenyannick@gmail.com">E-mail</a>
+                        <a class="btn-pill" href="https://www.linkedin.com/in/yannick-van-duppen-5a72b3284/" target="_blank" rel="noopener">LinkedIn</a>
+                        <button class="btn-pill" type="button" onclick="window.print()">Afdrukken / PDF</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Tijdlijn: mijn weg naar IT -->
+    <section class="section journey-section">
+        <div class="container">
+            <div class="row g-4 align-items-end mb-5">
+                <div class="col-12 col-lg-7">
+                    <p class="section-label">Mijn IT-verhaal</p>
+                    <h2 class="section-title mb-0">Van passie naar <strong>beroep.</strong></h2>
+                </div>
+                <div class="col-12 col-lg-5">
+                    <div class="journey-stats">
+                        <div>
+                            <span class="journey-number"><span id="jaren-in-it">5</span>+</span>
+                            <span class="journey-caption">jaar werkzaam in IT</span>
+                        </div>
+                        <div>
+                            <span class="journey-number">2021</span>
+                            <span class="journey-caption">eerste job in IT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <ol class="journey">
+                <li class="journey-item is-it">
+                    <span class="journey-year">Jeugd</span>
+                    <h3>Gebeten door IT</h3>
+                    <p>Altijd al gefascineerd door computers en technologie.</p>
+                </li>
+                <li class="journey-item">
+                    <span class="journey-year">2011</span>
+                    <h3>Financie- en verzekeringswezen</h3>
+                    <p>Bachelor aan Thomas More.</p>
+                </li>
+                <li class="journey-item">
+                    <span class="journey-year">2019</span>
+                    <h3>Projectleider</h3>
+                    <p>Interieurprojecten bij Dovy Keukens.</p>
+                </li>
+                <li class="journey-item is-it">
+                    <span class="journey-year">2021</span>
+                    <h3>Start in IT</h3>
+                    <p>First-line support bij AZ Turnhout.</p>
+                </li>
+                <li class="journey-item is-it">
+                    <span class="journey-year">2023</span>
+                    <h3>Software consultant / Functioneel Analist</h3>
+                    <p>Bij BlueIT, en start van het graduaat Systeem- en netwerkbeheer.</p>
+                </li>
+                <li class="journey-item is-it is-now">
+                    <span class="journey-year">Nu</span>
+                    <h3>Afstuderen</h3>
+                    <p>Graduaat Systeem- en netwerkbeheer aan Thomas More Geel.</p>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <main class="section">
+        <div class="container">
+            <div class="row g-5">
+
+                <!-- Hoofdkolom -->
+                <div class="col-12 col-lg-8">
+
+                    <!-- Ervaring -->
+                    <h2 class="cv-heading">Ervaring</h2>
+
+                    <article class="cv-item">
+                        <div class="cv-meta">
+                            <span class="cv-date">jul. 2023 – heden</span>
+                            <span>Grobbendonk</span>
+                        </div>
+                        <h3>Software consultant / Functioneel Analist</h3>
+                        <p class="cv-org">BlueIT</p>
+                        <ul>
+                            <li>Treed op als primaire schakel tussen klanten en het developmentteam en zorg voor duidelijke communicatie en afstemming tussen business en IT.</li>
+                            <li>Analyseer en breng bedrijfsprocessen en workflows van klanten in kaart om vereisten voor softwareaanpassingen en nieuwe functionaliteiten te definiëren.</li>
+                            <li>Vertaal businessbehoeften naar gedetailleerde functionele specificaties en documentatie in nauwe samenwerking met het developmentteam.</li>
+                            <li>Begeleid de end-to-end implementatie van gespecialiseerde softwareoplossingen voor havenbedrijven, van analyse en configuratie tot testing en go-live.</li>
+                            <li>Beheer de volledige projectcyclus en zorg voor tijdige oplevering in lijn met de verwachtingen van de klant.</li>
+                            <li>Analyseer en los incidenten op met betrekking tot netwerk, software en gebruikersomgevingen.</li>
+                        </ul>
+                    </article>
+
+                    <article class="cv-item">
+                        <div class="cv-meta">
+                            <span class="cv-date">sep. 2021 – jul. 2023</span>
+                            <span>Turnhout</span>
+                        </div>
+                        <h3>First-line support</h3>
+                        <p class="cv-org">AZ Turnhout</p>
+                        <ul>
+                            <li>Bood eerstelijns IT-ondersteuning aan ziekenhuispersoneel en loste software- en hardwareproblemen efficiënt en klantgericht op.</li>
+                            <li>Analyseerde en documenteerde incidenten en oplossingen ter verbetering van kennisdeling en supportprocessen.</li>
+                            <li>Installeerde, configureerde en onderhield hardware, waaronder printers, scanners en andere randapparatuur.</li>
+                            <li>Verzorgde onboarding en training van nieuwe medewerkers in het gebruik van IT-systemen en interne applicaties.</li>
+                            <li>Beheerde gebruikersaccounts in Active Directory, inclusief rechtenbeheer en groepslidmaatschappen.</li>
+                            <li>Communiceerde effectief met eindgebruikers, IT-collega's en externe leveranciers voor een vlotte incidentafhandeling.</li>
+                        </ul>
+                    </article>
+
+                    <article class="cv-item">
+                        <div class="cv-meta">
+                            <span class="cv-date">mrt. 2019 – sep. 2021</span>
+                            <span>Turnhout</span>
+                        </div>
+                        <h3>Projectleider</h3>
+                        <p class="cv-org">Dovy Keukens</p>
+                        <ul>
+                            <li>Verantwoordelijk voor het uitwerken en begeleiden van volledige interieurprojecten van concept tot oplevering.</li>
+                            <li>Ontwierp maatwerkinterieurs afgestemd op de wensen, behoeften en het budget van de klant.</li>
+                            <li>Voerde opmetingen uit en werkte technische plannen uit ter voorbereiding van productie en plaatsing.</li>
+                            <li>Coördineerde het volledige projecttraject, inclusief werfopvolging en deelname aan werfvergaderingen.</li>
+                            <li>Beheerde communicatie en administratie en zorgde voor een vlotte samenwerking tussen klanten, leveranciers en interne teams.</li>
+                            <li>Garandeerde een correcte en tijdige projectafhandeling met oog voor kwaliteit en detail.</li>
+                        </ul>
+                    </article>
+
+                    <!-- Certificaten -->
+                    <h2 class="cv-heading mt-5">Certificaten</h2>
+
+                    <article class="cv-item">
+                        <div class="cv-meta">
+                            <span class="cv-status">Bezig</span>
+                            <span>INE Security</span>
+                        </div>
+                        <h3>eJPT – eLearnSecurity Junior Penetration Tester</h3>
+                        <p class="cv-note">Praktijkgerichte certificering in penetration testing: netwerken, verkenning, kwetsbaarheden opsporen en uitbuiten in een realistische labomgeving.</p>
+                    </article>
+
+                    <article class="cv-item">
+                        <div class="cv-meta">
+                            <span>TryHackMe</span>
+                        </div>
+                        <h3>Leerpaden cybersecurity</h3>
+                        <p class="cv-note">Leerpaden afgerond met hands-on oefeningen in virtuele labs.</p>
+                        <ul class="tags">
+                            <li>Pre Security</li>
+                            <li>Cyber Security 101</li>
+                        </ul>
+                    </article>
+
+                    <!-- Studies -->
+                    <h2 class="cv-heading mt-5">Studies en opleidingen</h2>
+
+                    <article class="cv-item">
+                        <div class="cv-meta">
+                            <span class="cv-date">2023 – heden</span>
+                            <span>Geel</span>
+                        </div>
+                        <h3>Graduaat Systeem- en netwerkbeheer</h3>
+                        <p class="cv-org">Thomas More</p>
+                    </article>
+
+                    <article class="cv-item">
+                        <h3>Functioneel analist</h3>
+                        <p class="cv-org">NCOI</p>
+                    </article>
+
+                    <article class="cv-item">
+                        <div class="cv-meta">
+                            <span class="cv-date">2011 – 2016</span>
+                            <span>Geel</span>
+                        </div>
+                        <h3>Bachelor Financie- en verzekeringswezen</h3>
+                        <p class="cv-org">Thomas More</p>
+                        <p class="cv-note">Uitgezonderd schaderegeling*</p>
+                    </article>
+                </div>
+
+                <!-- Zijkolom -->
+                <aside class="col-12 col-lg-4">
+                    <div class="cv-side">
+                        <h2 class="cv-side-heading">Computervaardigheden</h2>
+                        <ul class="tags mb-0">
+                            <li>CCNA</li>
+                            <li>Linux</li>
+                            <li>O365</li>
+                            <li>Active Directory</li>
+                        </ul>
+                    </div>
+
+                    <div class="cv-side">
+                        <h2 class="cv-side-heading">Talenkennis</h2>
+                        <dl class="cv-langs">
+                            <div><dt>Nederlands</dt><dd>Moedertaal</dd></div>
+                            <div><dt>Engels</dt><dd>Vloeiend</dd></div>
+                            <div><dt>Frans</dt><dd>Basis</dd></div>
+                        </dl>
+                    </div>
+
+                    <div class="cv-side">
+                        <h2 class="cv-side-heading">Persoonlijke vaardigheden</h2>
+                        <ul class="tags mb-0">
+                            <li>Problem solving</li>
+                            <li>Communicatie</li>
+                            <li>Leergierig</li>
+                            <li>Stressbestendig</li>
+                        </ul>
+                    </div>
+
+                    <div class="cv-side">
+                        <h2 class="cv-side-heading">Hobby's</h2>
+                        <p class="mb-0">Tennistrainer</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container d-flex flex-wrap justify-content-between gap-2">
+            <span>© 2026 Yannick Van Duppen</span>
+            <span>partnerup.be</span>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="presentatie.js"></script>
+    <script>
+        // Aantal jaren in IT automatisch berekenen (gestart in september 2021)
+        var start = new Date(2021, 8, 1);
+        var jaren = Math.floor((Date.now() - start) / (365.25 * 24 * 60 * 60 * 1000));
+        document.getElementById('jaren-in-it').textContent = jaren;
+    </script>
+</body>
+</html>
