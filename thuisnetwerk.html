@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thuisnetwerk beveiligen | Yannick Van Duppen</title>
-    <meta name="description" content="Eigen cybersecurityproject van Yannick Van Duppen: het thuisnetwerk van zijn ouders beveiligen met pfSense, DNS over TLS, pfBlockerNG, Tailscale, een wachtwoordmanager en MFA.">
+    <title data-nl="Thuisnetwerk beveiligen | Yannick Van Duppen" data-en="Securing a home network | Yannick Van Duppen">Thuisnetwerk beveiligen | Yannick Van Duppen</title>
+    <meta name="description" content="Project van Yannick Van Duppen: het thuisnetwerk van zijn ouders beveiligen met pfSense, DNS over TLS, pfBlockerNG, Tailscale, een wachtwoordmanager en MFA." data-nl="Project van Yannick Van Duppen: het thuisnetwerk van zijn ouders beveiligen met pfSense, DNS over TLS, pfBlockerNG, Tailscale, een wachtwoordmanager en MFA." data-en="Project by Yannick Van Duppen: securing his parents' home network with pfSense, DNS over TLS, pfBlockerNG, Tailscale, a password manager and MFA.">
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg stroke='%23111' stroke-width='5' stroke-linecap='round'%3E%3Cpath d='M32 4v8M32 52v8M4 32h8M52 32h8M12 12l6 6M46 46l6 6M52 12l-6 6M18 46l-6 6'/%3E%3Ccircle cx='32' cy='32' r='14' fill='%23F9C846'/%3E%3C/g%3E%3C/svg%3E">
+
+    <!-- Taal kiezen voor de pagina getekend wordt -->
+    <script src="taal.js?v=1"></script>
 
     <!-- Lettertype -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,13 +17,12 @@
 
     <!-- Bootstrap, daarna eigen stijlen (zodat die voorrang krijgen) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="style.css?v=16" rel="stylesheet">
+    <link href="style.css?v=17" rel="stylesheet">
 </head>
 <body>
 
     <!--
-        Eigen project (vak Cybersecurity), los van de werkplekopdracht.
-        Wordt gebruikt als bewijs bij de opleidingsrollen (sectie 05 op index.html).
+        Eigen project (oorspronkelijk voor het vak Cybersecurity).
         Bron: Cybersecurity_Project_Yannick_Van_Duppen.pdf (48 p.).
         Geen publieke IP-adressen, tokens of andere gevoelige details uit het verslag op deze pagina zetten.
     -->
@@ -29,18 +31,20 @@
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">Yannick<span>.</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Menu openen">
+            <div class="taal-keuze ms-auto ms-lg-3 me-2 me-lg-0 order-lg-last" role="group" aria-label="Taal / Language">
+                <button class="taal-knop" type="button" data-taal="nl" aria-pressed="true">NL</button>
+                <button class="taal-knop" type="button" data-taal="en" aria-pressed="false">EN</button>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html#wie">Wie ben ik</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#werkplek">Werkplek</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#opdracht">Opdracht</a></li>
-                    <li class="nav-item" hidden data-concept><a class="nav-link" href="index.html#bewijsstukken">Bewijsstukken</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#rollen">Rollen</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#reflectie">Reflectie</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#wie"><span class="nl">Over mij</span><span class="en">About</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#vaardigheden"><span class="nl">Wat ik doe</span><span class="en">What I do</span></a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html#projecten"><span class="nl">Projecten</span><span class="en">Projects</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="cv.html">CV</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -50,11 +54,14 @@
         <!-- Kop -->
         <header class="section project-kop">
             <div class="container">
-                <p class="section-label">Eigen project · vak Cybersecurity</p>
-                <h1 class="section-title">Het thuisnetwerk van mijn ouders <strong>beveiligen.</strong></h1>
+                <p class="section-label"><span class="nl">Project · Netwerkbeveiliging</span><span class="en">Project · Network security</span></p>
+                <h1 class="section-title">
+                    <span class="nl">Het thuisnetwerk van mijn ouders <strong>beveiligen.</strong></span>
+                    <span class="en">Securing my parents' <strong>home network.</strong></span>
+                </h1>
                 <p class="lead-text">
-                    Los van mijn werkplekopdracht, maar een van mijn grootste leerscholen: van een standaard router van
-                    de provider naar een eigen firewall, versleuteld DNS-verkeer en veilige wachtwoorden voor het hele gezin.
+                    <span class="nl">Een van mijn grootste leerscholen: van een standaard router van de provider naar een eigen firewall, versleuteld DNS-verkeer en veilige wachtwoorden voor het hele gezin.</span>
+                    <span class="en">One of my biggest learning experiences: from a standard ISP router to my own firewall, encrypted DNS traffic and secure passwords for the whole family.</span>
                 </p>
             </div>
         </header>
@@ -64,17 +71,20 @@
             <div class="container">
                 <div class="row g-5 align-items-center">
                     <div class="col-12 col-lg-5">
-                        <img class="bewijs-img" src="img/bewijs-thuisnetwerk.jpg" alt="Netwerkschema voor en na: eerst één router van de provider met wifi, daarna modem in bridge mode, Netgate 1100 met pfSense als firewall, een switch en wifi-access points." width="695" height="668" loading="lazy">
+                        <img class="bewijs-img" src="img/bewijs-thuisnetwerk.jpg" width="695" height="668" loading="lazy"
+                             alt="Netwerkschema voor en na: eerst één router van de provider met wifi, daarna modem in bridge mode, Netgate 1100 met pfSense als firewall, een switch en wifi-access points."
+                             data-alt-nl="Netwerkschema voor en na: eerst één router van de provider met wifi, daarna modem in bridge mode, Netgate 1100 met pfSense als firewall, een switch en wifi-access points."
+                             data-alt-en="Network diagram before and after: first a single ISP router with wifi, then a modem in bridge mode, a Netgate 1100 running pfSense as firewall, a switch and wifi access points.">
                     </div>
                     <div class="col-12 col-lg-7">
                         <dl class="bewijs-info">
-                            <dt>Situatie</dt>
-                            <dd>Een standaard router van de provider met een basisfirewall, en overal dezelfde, zwakke wachtwoorden.</dd>
-                            <dt>Doel</dt>
-                            <dd>Het netwerk zo goed mogelijk beveiligen, zonder dat surfen, streamen of thuiswerken er hinder van ondervinden.</dd>
-                            <dt>Wat ik deed</dt>
+                            <dt><span class="nl">Situatie</span><span class="en">Situation</span></dt>
+                            <dd><span class="nl">Een standaard router van de provider met een basisfirewall, en overal dezelfde, zwakke wachtwoorden.</span><span class="en">A standard ISP router with a basic firewall, and the same weak passwords everywhere.</span></dd>
+                            <dt><span class="nl">Doel</span><span class="en">Goal</span></dt>
+                            <dd><span class="nl">Het netwerk zo goed mogelijk beveiligen, zonder dat surfen, streamen of thuiswerken er hinder van ondervinden.</span><span class="en">Secure the network as well as possible, without getting in the way of browsing, streaming or working from home.</span></dd>
+                            <dt><span class="nl">Wat ik deed</span><span class="en">What I did</span></dt>
                             <dd>
-                                <ul class="kaart-lijst mt-1">
+                                <ul class="kaart-lijst mt-1 nl">
                                     <li>Eigen firewall geplaatst: Netgate 1100 met pfSense, als router, DHCP-server en firewall</li>
                                     <li>De router van de provider in bridge mode gezet</li>
                                     <li>DNS over TLS via Quad9 en Cloudflare, zodat de provider geen DNS-verkeer meer ziet</li>
@@ -82,9 +92,17 @@
                                     <li>Veilige toegang op afstand met Tailscale</li>
                                     <li>Voor mijn ouders: een wachtwoordmanager (NordPass) en MFA</li>
                                 </ul>
+                                <ul class="kaart-lijst mt-1 en">
+                                    <li>Installed my own firewall: a Netgate 1100 running pfSense as router, DHCP server and firewall</li>
+                                    <li>Put the ISP router in bridge mode</li>
+                                    <li>DNS over TLS via Quad9 and Cloudflare, so the ISP can no longer see DNS traffic</li>
+                                    <li>Network-wide ad and malware blocking with pfBlockerNG</li>
+                                    <li>Secure remote access with Tailscale</li>
+                                    <li>For my parents: a password manager (NordPass) and MFA</li>
+                                </ul>
                             </dd>
-                            <dt>Resultaat</dt>
-                            <dd>Volledige controle over het netwerk, versleuteld DNS-verkeer en sterke, unieke wachtwoorden, zonder dat mijn ouders aan gebruiksgemak inleveren.</dd>
+                            <dt><span class="nl">Resultaat</span><span class="en">Result</span></dt>
+                            <dd><span class="nl">Volledige controle over het netwerk, versleuteld DNS-verkeer en sterke, unieke wachtwoorden, zonder dat mijn ouders aan gebruiksgemak inleveren.</span><span class="en">Full control over the network, encrypted DNS traffic and strong, unique passwords, without my parents losing any ease of use.</span></dd>
                         </dl>
                     </div>
                 </div>
@@ -94,53 +112,76 @@
         <!-- De grootste leerschool -->
         <section class="section">
             <div class="container">
-                <p class="section-label">Wat niet meteen lukte</p>
-                <h2 class="section-title">Mijn grootste <strong>leerschool.</strong></h2>
+                <p class="section-label"><span class="nl">Wat niet meteen lukte</span><span class="en">What didn't work right away</span></p>
+                <h2 class="section-title"><span class="nl">Mijn grootste</span><span class="en">What I</span> <strong><span class="nl">leerschool.</span><span class="en">learned most from.</span></strong></h2>
 
                 <div class="row g-4">
                     <div class="col-12 col-md-6">
                         <div class="kaart h-100">
-                            <h3 class="kaart-titel"><span class="kaart-num">1</span>Dubbele DHCP</h3>
-                            <p class="mb-0">De wifi-mesh (TP-Link Deco) stond in routermodus en deelde zelf IP-adressen uit. Daardoor liep het DNS-verkeer niet via de firewall en werkte de adblocker niet. <strong>Oplossing:</strong> de Deco in access-pointmodus, zodat de firewall alles beheert.</p>
+                            <h3 class="kaart-titel"><span class="kaart-num">1</span><span class="nl">Dubbele DHCP</span><span class="en">Double DHCP</span></h3>
+                            <p class="mb-0 nl">De wifi-mesh (TP-Link Deco) stond in routermodus en deelde zelf IP-adressen uit. Daardoor liep het DNS-verkeer niet via de firewall en werkte de adblocker niet. <strong>Oplossing:</strong> de Deco in access-pointmodus, zodat de firewall alles beheert.</p>
+                            <p class="mb-0 en">The wifi mesh (TP-Link Deco) was in router mode and handed out its own IP addresses. As a result, DNS traffic bypassed the firewall and the ad blocker didn't work. <strong>Fix:</strong> switched the Deco to access point mode, so the firewall manages everything.</p>
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="kaart h-100">
-                            <h3 class="kaart-titel"><span class="kaart-num">2</span>Geblokkeerde poorten</h3>
-                            <p class="mb-0">Een eigen WireGuard-VPN kwam nooit tot stand: de provider blokkeert alle inkomende poorten, ook alternatieven zoals 443. Een Cloudflare Tunnel bestond niet voor de processor van de firewall. <strong>Oplossing:</strong> Tailscale, dat geen open poorten nodig heeft.</p>
+                            <h3 class="kaart-titel"><span class="kaart-num">2</span><span class="nl">Geblokkeerde poorten</span><span class="en">Blocked ports</span></h3>
+                            <p class="mb-0 nl">Een eigen WireGuard-VPN kwam nooit tot stand: de provider blokkeert alle inkomende poorten, ook alternatieven zoals 443. Een Cloudflare Tunnel bestond niet voor de processor van de firewall. <strong>Oplossing:</strong> Tailscale, dat geen open poorten nodig heeft.</p>
+                            <p class="mb-0 en">My own WireGuard VPN never connected: the ISP blocks all incoming ports, including alternatives such as 443. Cloudflare Tunnel wasn't available for the firewall's processor. <strong>Fix:</strong> Tailscale, which doesn't need any open ports.</p>
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="kaart h-100">
                             <h3 class="kaart-titel"><span class="kaart-num">3</span>Dynamic DNS</h3>
-                            <p class="mb-0">De ingebouwde Dynamic DNS-client van pfSense bleef falen. <strong>Oplossing:</strong> een eigen shellscript dat de Cloudflare API aanspreekt met een API-token met minimale rechten, elke 5 minuten uitgevoerd via een cronjob.</p>
+                            <p class="mb-0 nl">De ingebouwde Dynamic DNS-client van pfSense bleef falen. <strong>Oplossing:</strong> een eigen shellscript dat de Cloudflare API aanspreekt met een API-token met minimale rechten, elke 5 minuten uitgevoerd via een cronjob.</p>
+                            <p class="mb-0 en">pfSense's built-in Dynamic DNS client kept failing. <strong>Fix:</strong> my own shell script that calls the Cloudflare API with a least-privilege API token, run every 5 minutes by a cron job.</p>
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="kaart h-100">
-                            <h3 class="kaart-titel"><span class="kaart-num">4</span>Hardwaregrenzen</h3>
-                            <p class="mb-0">Inbraakdetectie met Suricata bleek op termijn te zwaar voor de Netgate 1100, naast de andere diensten. <strong>Keuze:</strong> Suricata uitgeschakeld; de bescherming loopt via pfBlockerNG en de firewall. Voor volledige IDS/IPS is zwaardere hardware nodig.</p>
+                            <h3 class="kaart-titel"><span class="kaart-num">4</span><span class="nl">Hardwaregrenzen</span><span class="en">Hardware limits</span></h3>
+                            <p class="mb-0 nl">Inbraakdetectie met Suricata bleek op termijn te zwaar voor de Netgate 1100, naast de andere diensten. <strong>Keuze:</strong> Suricata uitgeschakeld; de bescherming loopt via pfBlockerNG en de firewall. Voor volledige IDS/IPS is zwaardere hardware nodig.</p>
+                            <p class="mb-0 en">Intrusion detection with Suricata turned out to be too heavy for the Netgate 1100 alongside the other services. <strong>Decision:</strong> disabled Suricata; protection runs through pfBlockerNG and the firewall. Full IDS/IPS needs more powerful hardware.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Welke rollen dit project aantoont -->
+        <!-- Wat dit project aantoont -->
         <section class="section">
             <div class="container">
-                <p class="section-label">Bewijs voor mijn rollen</p>
-                <h2 class="section-title">Wat dit project <strong>aantoont.</strong></h2>
+                <p class="section-label"><span class="nl">Vaardigheden</span><span class="en">Skills</span></p>
+                <h2 class="section-title"><span class="nl">Wat dit project</span><span class="en">What this project</span> <strong><span class="nl">aantoont.</span><span class="en">shows.</span></strong></h2>
 
-                <ul class="rol-bewijzen">
-                    <li><a href="index.html#rol-2"><span>2</span> Netwerkbeheerder: firewall, bridge mode, DHCP, DNS over TLS en VPN opgezet</a></li>
-                    <li><a href="index.html#rol-3"><span>3</span> Systeembeheerder: firewall geïnstalleerd en beheerd, diensten en pakketten ingericht</a></li>
-                    <li><a href="index.html#rol-5"><span>5</span> Bouwer: eigen script voor Dynamic DNS via de Cloudflare API, met cronjob</a></li>
-                    <li><a href="index.html#rol-4"><span>4</span> Ondersteuner: wachtwoordmanager en MFA ingesteld en uitgelegd aan mijn ouders</a></li>
-                    <li><a href="index.html#rol-1"><span>1</span> IT professional: problemen zelfstandig geanalyseerd, opgelost en gedocumenteerd</a></li>
-                </ul>
+                <div class="row g-4">
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="kaart h-100">
+                            <h3 class="kaart-titel"><span class="nl">Netwerken</span><span class="en">Networking</span></h3>
+                            <p class="mb-0"><span class="nl">Firewall, bridge mode, DHCP, DNS over TLS en VPN opgezet.</span><span class="en">Set up a firewall, bridge mode, DHCP, DNS over TLS and VPN.</span></p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="kaart h-100">
+                            <h3 class="kaart-titel"><span class="nl">Systeembeheer</span><span class="en">System administration</span></h3>
+                            <p class="mb-0"><span class="nl">De firewall geïnstalleerd en beheerd, diensten en pakketten ingericht.</span><span class="en">Installed and managed the firewall, configured services and packages.</span></p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="kaart h-100">
+                            <h3 class="kaart-titel"><span class="nl">Automatisatie</span><span class="en">Automation</span></h3>
+                            <p class="mb-0"><span class="nl">Eigen script voor Dynamic DNS via de Cloudflare API, met cronjob.</span><span class="en">Wrote my own Dynamic DNS script using the Cloudflare API, with a cron job.</span></p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="kaart h-100">
+                            <h3 class="kaart-titel"><span class="nl">Support</span><span class="en">User support</span></h3>
+                            <p class="mb-0"><span class="nl">Wachtwoordmanager en MFA ingesteld en uitgelegd aan mijn ouders.</span><span class="en">Set up and explained a password manager and MFA to my parents.</span></p>
+                        </div>
+                    </div>
+                </div>
 
-                <p class="mt-4 mb-0"><a class="link-arrow" href="index.html"><span aria-hidden="true">←</span> Terug naar mijn portfolio</a></p>
+                <p class="mt-4 mb-0"><a class="link-arrow" href="index.html#projecten"><span aria-hidden="true">←</span> <span class="nl">Terug naar mijn projecten</span><span class="en">Back to my projects</span></a></p>
             </div>
         </section>
     </main>

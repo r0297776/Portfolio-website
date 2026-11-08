@@ -704,6 +704,40 @@ body.presentatie .presentatie-hud {
     font-variant-numeric: tabular-nums;
 }
 
+/* ===== Tweetaligheid: alleen de gekozen taal tonen (taal.js zet <html lang>) ===== */
+html[lang="nl"] .en,
+html[lang="en"] .nl {
+    display: none !important;
+}
+
+.taal-keuze {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.taal-knop {
+    padding: 0.15rem 0.6rem;
+    border: 1.5px solid var(--line);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--ink);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.taal-knop[aria-pressed="true"] {
+    background: var(--ink);
+    color: var(--bg);
+}
+
+.taal-knop:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
 /* ===== Conceptweergave: melding onderaan, alleen lokaal ===== */
 .concept-balk {
     position: fixed;

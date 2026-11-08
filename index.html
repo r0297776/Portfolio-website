@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yannick Van Duppen | Systeem- &amp; netwerkbeheer</title>
-    <meta name="description" content="Afstudeerportfolio van Yannick Van Duppen, graduaat systeem- en netwerkbeheer aan Thomas More Geel.">
+    <title data-nl="Yannick Van Duppen | Software consultant · Systeem- &amp; netwerkbeheer" data-en="Yannick Van Duppen | Software consultant · Systems &amp; network administration">Yannick Van Duppen | Software consultant · Systeem- &amp; netwerkbeheer</title>
+    <meta name="description" content="Yannick Van Duppen: software consultant bij BlueIT en student systeem- en netwerkbeheer. Netwerken, systemen en security." data-nl="Yannick Van Duppen: software consultant bij BlueIT en student systeem- en netwerkbeheer. Netwerken, systemen en security." data-en="Yannick Van Duppen: software consultant at BlueIT and systems &amp; network administration student. Networking, systems and security.">
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg stroke='%23111' stroke-width='5' stroke-linecap='round'%3E%3Cpath d='M32 4v8M32 52v8M4 32h8M52 32h8M12 12l6 6M46 46l6 6M52 12l-6 6M18 46l-6 6'/%3E%3Ccircle cx='32' cy='32' r='14' fill='%23F9C846'/%3E%3C/g%3E%3C/svg%3E">
+
+    <!-- Taal kiezen voor de pagina getekend wordt -->
+    <script src="taal.js?v=1"></script>
 
     <!-- Lettertype -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,68 +17,67 @@
 
     <!-- Bootstrap, daarna eigen stijlen (zodat die voorrang krijgen) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="style.css?v=16" rel="stylesheet">
+    <link href="style.css?v=17" rel="stylesheet">
 </head>
 <body>
 
     <!--
-        OPBOUW = VOLGORDE VAN DE PRESENTATIE (± 20 min)
-        Elke <section class="slide"> is één "slide" in presentatiemodus (toets P).
-
-        00  Titel (hero)
-        01  Wie ben ik?                          ± 1'
-        02  Het WPL-bedrijf en de werkomgeving   ± 1'
-        03  Mijn werkplekopdracht                ± 2'
-        04  Portfoliobewijsstukken (max. 6)      ± 9'
-        05  Ik als IT professional met PIT       ± 5'  (1 slide per opleidingsrol)
-        06  Reflectie en toekomst                ± 2'
-        07  Discussie / vragen
-
-        Alles met class="invullen" (geel gestippeld) moet je nog zelf invullen.
+        CV-WEBSITE (branch main)
+        De schoolversie (juryvoorstelling) staat in branch "school" (en tag schoolportfolio-2026).
+        Tweetalig: <span class="nl">…</span><span class="en">…</span>, zie taal.js.
+        Presentatiemodus (toets P) werkt ook hier: elke <section class="slide"> is één slide.
     -->
 
     <!-- Navigatie -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#top">Yannick<span>.</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Menu openen">
+            <div class="taal-keuze ms-auto ms-lg-3 me-2 me-lg-0 order-lg-last" role="group" aria-label="Taal / Language">
+                <button class="taal-knop" type="button" data-taal="nl" aria-pressed="true">NL</button>
+                <button class="taal-knop" type="button" data-taal="en" aria-pressed="false">EN</button>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#wie">Wie ben ik</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#werkplek">Werkplek</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#opdracht">Opdracht</a></li>
-                    <li class="nav-item" hidden data-concept><a class="nav-link" href="#bewijsstukken">Bewijsstukken</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#rollen">Rollen</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#reflectie">Reflectie</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#wie"><span class="nl">Over mij</span><span class="en">About</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#vaardigheden"><span class="nl">Wat ik doe</span><span class="en">What I do</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projecten"><span class="nl">Projecten</span><span class="en">Projects</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="cv.html">CV</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- 00 — Titel -->
+    <!-- Titel -->
     <header class="hero slide" id="top">
         <div class="container">
             <div class="row g-5 align-items-center">
                 <!-- Tekst (op gsm eerst, op desktop rechts) -->
                 <div class="col-12 col-lg-6 order-lg-2">
-                    <p class="section-label">Afstudeerportfolio · Thomas More Geel</p>
+                    <p class="section-label">Software consultant · BlueIT</p>
                     <h1 class="hero-title">
                         Yannick
-                        <span>Systeem- &amp; netwerkbeheer</span>
+                        <span class="nl">Systeem- &amp; netwerkbeheer</span><span class="en">Systems &amp; network administration</span>
                     </h1>
-                    <p class="hero-lead">Mijn werkplekopdracht, de bewijsstukken die ik verzamelde en hoe ik groeide als IT professional.</p>
+                    <p class="hero-lead">
+                        <span class="nl">IT'er met een hart voor netwerken, systemen en security. Van support in een ziekenhuis tot software voor de haven en de petrochemie.</span>
+                        <span class="en">IT professional with a passion for networking, systems and security. From hospital IT support to software for the port and petrochemical industry.</span>
+                    </p>
                     <div class="d-flex flex-wrap align-items-center gap-3">
-                        <a class="btn-pill" href="#wie">Maak kennis</a>
-                        <a class="btn-pill btn-pill-dark" href="cv.html">Bekijk mijn CV</a>
+                        <a class="btn-pill" href="#wie"><span class="nl">Maak kennis</span><span class="en">Get to know me</span></a>
+                        <a class="btn-pill btn-pill-dark" href="cv.html"><span class="nl">Bekijk mijn CV</span><span class="en">View my CV</span></a>
                     </div>
                 </div>
 
-                <!-- Mijn logo: bergen, water, surfen, natuur -->
+                <!-- Mijn logo: bergen, water, natuur -->
                 <div class="col-12 col-lg-6 order-lg-1">
-                    <img class="hero-logo" src="img/logo.svg" alt="Logo van Yannick: een getekend landschap met een boom, besneeuwde bergen, een zon en een surfer op de golven." width="780" height="435">
+                    <img class="hero-logo" src="img/logo.svg" width="780" height="435"
+                         alt="Logo van Yannick: een getekend landschap met een boom, besneeuwde bergen, een zon en een surfer op de golven."
+                         data-alt-nl="Logo van Yannick: een getekend landschap met een boom, besneeuwde bergen, een zon en een surfer op de golven."
+                         data-alt-en="Yannick's logo: an illustrated landscape with a tree, snowy mountains, a sun and a surfer on the waves.">
                 </div>
             </div>
         </div>
@@ -83,59 +85,63 @@
 
     <main>
 
-        <!-- 01 — Wie ben ik? (± 1') -->
+        <!-- Over mij -->
         <section class="section slide" id="wie">
             <div class="container">
                 <div class="row g-5 align-items-center">
                     <div class="col-12 col-lg-5">
                         <div class="d-flex align-items-center gap-4 mb-3">
-                            <img class="wie-foto" src="img/yannick.jpg" alt="Foto van Yannick Van Duppen" width="400" height="400">
+                            <img class="wie-foto" src="img/yannick.jpg" width="400" height="400"
+                                 alt="Foto van Yannick Van Duppen" data-alt-nl="Foto van Yannick Van Duppen" data-alt-en="Photo of Yannick Van Duppen">
                             <div>
-                                <p class="section-label mb-1">01 — Wie ben ik?</p>
-                                <h2 class="section-title wie-titel mb-0">Hallo, ik ben <strong>Yannick.</strong></h2>
+                                <p class="section-label mb-1"><span class="nl">Over mij</span><span class="en">About me</span></p>
+                                <h2 class="section-title wie-titel mb-0"><span class="nl">Hallo, ik ben</span><span class="en">Hi, I'm</span> <strong>Yannick.</strong></h2>
                             </div>
                         </div>
 
                         <p class="lead-text mb-3">Motherboard or snowboard?<br><strong class="board-zin">Every board deserves an upgrade!</strong></p>
 
                         <dl class="wie-feiten">
-                            <div><dt>Job</dt><dd>Software consultant bij BlueIT</dd></div>
-                            <div><dt>Opleiding</dt><dd>Graduaat systeem- en netwerkbeheer, Thomas More Geel</dd></div>
-                            <div><dt>In IT</dt><dd>Sinds 2021, al <span class="jaren-in-it">5</span>+ jaar</dd></div>
+                            <div><dt>Job</dt><dd><span class="nl">Software consultant bij BlueIT</span><span class="en">Software consultant at BlueIT</span></dd></div>
+                            <div><dt><span class="nl">Opleiding</span><span class="en">Education</span></dt><dd><span class="nl">Graduaat systeem- en netwerkbeheer, Thomas More Geel</span><span class="en">Associate degree in Systems &amp; Network Administration, Thomas More Geel</span></dd></div>
+                            <div><dt>In IT</dt><dd><span class="nl">Sinds 2021, al <span class="jaren-in-it">5</span>+ jaar</span><span class="en">Since 2021, <span class="jaren-in-it">5</span>+ years</span></dd></div>
                         </dl>
 
                         <ul class="tags mt-3">
-                            <li>Probleemoplosser</li>
-                            <li>Communicatief</li>
-                            <li>Leergierig</li>
-                            <li>Stressbestendig</li>
+                            <li><span class="nl">Probleemoplosser</span><span class="en">Problem solver</span></li>
+                            <li><span class="nl">Communicatief</span><span class="en">Communicative</span></li>
+                            <li><span class="nl">Leergierig</span><span class="en">Eager to learn</span></li>
+                            <li><span class="nl">Stressbestendig</span><span class="en">Calm under pressure</span></li>
                         </ul>
                     </div>
 
                     <!-- Twee werelden: achter het scherm (tracert) en buiten het scherm (hobby's) -->
                     <div class="col-12 col-lg-7">
-                        <p class="wereld-label">Achter het scherm</p>
+                        <p class="wereld-label"><span class="nl">Achter het scherm</span><span class="en">Behind the screen</span></p>
                         <!-- Mijn weg naar IT als traceroute. Elke .stap verschijnt in presentatiemodus bij een klik. -->
-                        <div class="terminal" role="img" aria-label="Traceroute van mijn loopbaan: 2011 bachelor financie- en verzekeringswezen, 2019 projectleider bij Dovy Keukens, 2021 first-line support bij AZ Turnhout, 2023 software consultant bij BlueIT, nu graduaat systeem- en netwerkbeheer, daarna eJPT en cybersecurity, en de rest van de route ligt nog open.">
+                        <div class="terminal" role="img"
+                             aria-label="Traceroute van mijn loopbaan: 2011 bachelor financie- en verzekeringswezen, 2019 projectleider bij Dovy Keukens, 2021 first-line support bij AZ Turnhout, 2023 software consultant bij BlueIT, nu graduaat systeem- en netwerkbeheer, daarna eJPT en cybersecurity."
+                             data-aria-nl="Traceroute van mijn loopbaan: 2011 bachelor financie- en verzekeringswezen, 2019 projectleider bij Dovy Keukens, 2021 first-line support bij AZ Turnhout, 2023 software consultant bij BlueIT, nu graduaat systeem- en netwerkbeheer, daarna eJPT en cybersecurity."
+                             data-aria-en="Traceroute of my career: 2011 bachelor in finance and insurance, 2019 project lead at Dovy Keukens, 2021 first-line support at AZ Turnhout, 2023 software consultant at BlueIT, now a systems and network administration degree, next eJPT and cybersecurity.">
                             <div class="terminal-balk">
                                 <span></span><span></span><span></span>
                                 <span class="terminal-titel">Windows PowerShell</span>
                             </div>
                             <div class="terminal-body">
                                 <div><span class="t-prompt">PS C:\Users\yannick&gt;</span> <span class="t-cmd">tracert yannick</span></div>
-                                <div class="t-hop stap"><span>1</span><span>2011</span><span>Bachelor Financie- en verzekeringswezen</span></div>
-                                <div class="t-hop stap"><span>2</span><span>2019</span><span>Projectleider · Dovy Keukens</span></div>
+                                <div class="t-hop stap"><span>1</span><span>2011</span><span><span class="nl">Bachelor Financie- en verzekeringswezen</span><span class="en">Bachelor in Finance &amp; Insurance</span></span></div>
+                                <div class="t-hop stap"><span>2</span><span>2019</span><span><span class="nl">Projectleider</span><span class="en">Project lead</span> · Dovy Keukens</span></div>
                                 <div class="t-hop stap t-it"><span>3</span><span>2021</span><span>First-line support · AZ Turnhout</span></div>
                                 <div class="t-hop stap t-it"><span>4</span><span>2023</span><span>Software consultant · BlueIT</span></div>
-                                <div class="t-hop stap t-doel"><span>5</span><span>Nu</span><span>Graduaat Systeem- en netwerkbeheer <em>← you are here</em></span></div>
+                                <div class="t-hop stap t-doel"><span>5</span><span><span class="nl">Nu</span><span class="en">Now</span></span><span><span class="nl">Graduaat Systeem- en netwerkbeheer</span><span class="en">Systems &amp; Network Administration</span> <em>← you are here</em></span></div>
                                 <!-- What's next: in IT blijf je leren -->
                                 <div class="t-hop stap t-next"><span>6</span><span>Next</span><span>eJPT · cybersecurity <em>(in progress)</em></span></div>
-                                <div class="t-hop stap t-timeout"><span>7</span><span>*</span><span>*  *  Request timed out: de rest van de route ligt nog open</span></div>
+                                <div class="t-hop stap t-timeout"><span>7</span><span>*</span><span>*  *  Request timed out: <span class="nl">de rest van de route ligt nog open</span><span class="en">the rest of the route is still open</span></span></div>
                                 <div class="stap t-dim">Trace still running... lifelong learning<span class="t-cursor">_</span></div>
                             </div>
                         </div>
 
-                        <p class="wereld-label mt-4">Buiten het scherm</p>
+                        <p class="wereld-label mt-4"><span class="nl">Buiten het scherm</span><span class="en">Beyond the screen</span></p>
                         <ul class="hobbys stap">
                             <li>
                                 <!-- Boardgames: dobbelsteen + pion -->
@@ -148,11 +154,11 @@
                             </li>
                             <li>
                                 <svg viewBox="0 0 40 40" aria-hidden="true"><polygon points="20,4 11,16 29,16" fill="#3E8E5A"/><polygon points="20,11 8,25 32,25" fill="#3E8E5A"/><rect x="17" y="25" width="6" height="10" fill="#8A5A3B"/></svg>
-                                Wandelen
+                                <span class="nl">Wandelen</span><span class="en">Hiking</span>
                             </li>
                             <li>
                                 <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="14" fill="#F9C846"/><path d="M9 11 Q17 20 9 29 M31 11 Q23 20 31 29" fill="none" stroke="#FFFFFF" stroke-width="2.2"/></svg>
-                                Tennistrainer
+                                <span class="nl">Tennistrainer</span><span class="en">Tennis coach</span>
                             </li>
                         </ul>
                     </div>
@@ -160,491 +166,59 @@
             </div>
         </section>
 
-        <!-- 02 — Het WPL-bedrijf en de werkomgeving (± 1') -->
-        <section class="section slide" id="werkplek">
+        <!-- Wat ik doe -->
+        <section class="section slide" id="vaardigheden">
             <div class="container">
-                <p class="section-label">02 — Het WPL-bedrijf en de werkomgeving</p>
-                <h2 class="section-title">Blue<strong class="streep-blauw">IT.</strong></h2>
-                <p class="lead-text mb-4">IT-bedrijf uit Grobbendonk. Mijn werkgever sinds juli 2023, en mijn werkplek voor dit graduaat.</p>
-
-                <!-- De drie takken van BlueIT (bron: publieke website van BlueIT) -->
-                <div class="row g-4 mb-4">
-                    <div class="col-12 col-md-4">
-                        <div class="kaart h-100">
-                            <h3 class="kaart-titel"><span class="kaart-num">1</span>Experts</h3>
-                            <p class="mb-0">IT-consultancy en het leveren van IT-profielen voor projecten. BlueIT ontwerpt, installeert, ondersteunt en onderhoudt de IT-infrastructuur van klanten.</p>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <div class="kaart h-100">
-                            <h3 class="kaart-titel"><span class="kaart-num">2</span>Software</h3>
-                            <p>Bedrijfskritische software voor de haven, de petrochemie, de bouw en de voedingsindustrie.</p>
-                            <ul class="tags mt-0">
-                                <li>MainTasc</li>
-                                <li>DokPlan</li>
-                                <li>SyncTrace</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <div class="kaart h-100">
-                            <h3 class="kaart-titel"><span class="kaart-num">3</span>Solutions</h3>
-                            <p class="mb-0">IT-diensten en beheer om de infrastructuur van klanten vlot en betrouwbaar te laten draaien, met consultants op locatie.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- NOG NIET KLAAR: haal 'hidden' weg zodra dit ingevuld is -->
-                <div class="row g-4">
-                    <div class="col-12 col-lg-7">
-                        <div class="kaart h-100">
-                            <h3 class="kaart-titel">Mijn plaats in het team</h3>
-                            <!-- INVULLEN -->
-                            <p class="invullen">In welke tak en welk team werk je? Met wie werk je samen, en wie is je mentor?</p>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-5">
-                        <div class="kaart h-100">
-                            <h3 class="kaart-titel">De werkomgeving</h3>
-                            <!-- INVULLEN: de belangrijkste systemen, netwerken en tools.
-                                 Geen gevoelige info: geen IP-adressen, interne servernamen of klantgegevens. -->
-                            <ul class="tags mt-0">
-                                <li class="invullen">bv. Windows Server</li>
-                                <li class="invullen">bv. Active Directory</li>
-                                <li class="invullen">bv. Microsoft 365</li>
-                                <li class="invullen">bv. ticketingsysteem</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 03 — Mijn werkplekopdracht (± 2') -->
-        <section class="section slide" id="opdracht">
-            <div class="container">
-                <p class="section-label">03 — Mijn werkplekopdracht</p>
-                <h2 class="section-title">Van <strong>SCS</strong> naar <strong class="streep-blauw">BlueIT.</strong></h2>
-                <p class="lead-text mb-4">
-                    BlueIT nam SCS over. De volledige IT-omgeving van SCS moet daarom migreren en opgaan in de BlueIT-omgeving.
-                    Ik volg die migratie van begin tot eind mee.
-                </p>
-
-                <!-- De opdracht in drie stappen -->
-                <div class="row g-4 opdracht-stappen">
-                    <div class="col-12 col-md-4">
-                        <div class="kaart h-100">
-                            <h3 class="kaart-titel"><span class="kaart-num">1</span>Analyseren</h3>
-                            <p class="mb-0">De SCS-omgeving onderzoeken en verschillen, afhankelijkheden en risico's met BlueIT bepalen.</p>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <div class="kaart h-100">
-                            <h3 class="kaart-titel"><span class="kaart-num">2</span>Documenteren</h3>
-                            <p class="mb-0">De omgeving en het migratieplan vastleggen: systemen, gebruikers, data en diensten.</p>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <div class="kaart h-100">
-                            <h3 class="kaart-titel"><span class="kaart-num">3</span>Integreren</h3>
-                            <p class="mb-0">Mee migreren en alles integreren in de BlueIT-omgeving.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="prioritair">
-                    <h3 class="kaart-titel mb-3">Afgesproken prioritaire rollen</h3>
-                    <!-- INVULLEN: laat alleen de rollen staan die bij de start als prioritair afgesproken zijn -->
-                    <div class="d-flex flex-wrap gap-2">
-                        <a class="rol-badge" href="#rol-1"><b>1</b> IT professional</a>
-                        <a class="rol-badge invullen" href="#rol-2"><b>2</b> Netwerkbeheerder</a>
-                        <a class="rol-badge invullen" href="#rol-3"><b>3</b> Systeembeheerder</a>
-                        <a class="rol-badge invullen" href="#rol-4"><b>4</b> Ondersteuner</a>
-                        <a class="rol-badge invullen" href="#rol-5"><b>5</b> Bouwer</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 04 — Portfoliobewijsstukken (± 9', max. 6 slides) -->
-        <section class="section slide" id="bewijsstukken" hidden data-concept>
-            <div class="container">
-                <p class="section-label">04 — Portfoliobewijsstukken</p>
-                <h2 class="section-title">Mijn sterkste <strong>bewijzen.</strong></h2>
-                <p class="lead-text mb-4">Zes bewijsstukken uit mijn werkplekopdracht bij BlueIT, gekozen op basis van de afgesproken prioritaire rollen.</p>
-
-                <!-- Overzicht: klik om naar een bewijsstuk te springen -->
-                <ol class="bewijs-overzicht">
-                    <li><a href="#bewijs-1"><span>01</span> <span class="invullen">Titel bewijsstuk 1</span></a></li>
-                    <li><a href="#bewijs-2"><span>02</span> <span class="invullen">Titel bewijsstuk 2</span></a></li>
-                    <li><a href="#bewijs-3"><span>03</span> <span class="invullen">Titel bewijsstuk 3</span></a></li>
-                    <li><a href="#bewijs-4"><span>04</span> <span class="invullen">Titel bewijsstuk 4</span></a></li>
-                    <li><a href="#bewijs-5"><span>05</span> <span class="invullen">Titel bewijsstuk 5</span></a></li>
-                    <li><a href="#bewijs-6"><span>06</span> <span class="invullen">Titel bewijsstuk 6</span></a></li>
-                </ol>
-            </div>
-        </section>
-
-        <!--
-            BEWIJSSTUK-SJABLOON
-            - Vervang de afbeelding: <img src="img/bewijs-1.webp" alt="..." loading="lazy">
-            - Hou het kort: dit is één slide. Details kunnen later op een aparte pagina.
-            - Deze bewijsstukken komen uit de werkplekopdracht en staan los van de bewijzen per rol (sectie 05).
-        -->
-
-        <!-- Bewijsstuk 1 (uit de werkplekopdracht bij BlueIT) -->
-        <section class="section slide bewijs" id="bewijs-1" hidden data-concept>
-            <div class="container">
-                <div class="row g-5 align-items-center">
-                    <div class="col-12 col-lg-6">
-                        <div class="bewijs-beeld invullen">Afbeelding: screenshot, schema of foto</div>
-                    </div>
-                    <div class="col-12 col-lg-6">
-                        <span class="bewijs-num">Bewijsstuk 01</span>
-                        <h2 class="bewijs-titel invullen">Titel van bewijsstuk 1</h2>
-                        <dl class="bewijs-info">
-                            <dt>Situatie</dt>
-                            <dd class="invullen">Welk probleem of welke vraag?</dd>
-                            <dt>Wat ik deed</dt>
-                            <dd class="invullen">Jouw concrete acties en de gebruikte technologie.</dd>
-                            <dt>Resultaat</dt>
-                            <dd class="invullen">Wat werkte er op het einde? Liefst meetbaar.</dd>
-                        </dl>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Bewijsstuk 2 -->
-        <section class="section slide bewijs" id="bewijs-2" hidden data-concept>
-            <div class="container">
-                <div class="row g-5 align-items-center">
-                    <div class="col-12 col-lg-6">
-                        <div class="bewijs-beeld invullen">Afbeelding: screenshot, schema of foto</div>
-                    </div>
-                    <div class="col-12 col-lg-6">
-                        <span class="bewijs-num">Bewijsstuk 02</span>
-                        <h2 class="bewijs-titel invullen">Titel van bewijsstuk 2</h2>
-                        <dl class="bewijs-info">
-                            <dt>Situatie</dt>
-                            <dd class="invullen">Welk probleem of welke vraag?</dd>
-                            <dt>Wat ik deed</dt>
-                            <dd class="invullen">Jouw concrete acties en de gebruikte technologie.</dd>
-                            <dt>Resultaat</dt>
-                            <dd class="invullen">Wat werkte er op het einde? Liefst meetbaar.</dd>
-                        </dl>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Bewijsstuk 3 -->
-        <section class="section slide bewijs" id="bewijs-3" hidden data-concept>
-            <div class="container">
-                <div class="row g-5 align-items-center">
-                    <div class="col-12 col-lg-6">
-                        <div class="bewijs-beeld invullen">Afbeelding: screenshot, schema of foto</div>
-                    </div>
-                    <div class="col-12 col-lg-6">
-                        <span class="bewijs-num">Bewijsstuk 03</span>
-                        <h2 class="bewijs-titel invullen">Titel van bewijsstuk 3</h2>
-                        <dl class="bewijs-info">
-                            <dt>Situatie</dt>
-                            <dd class="invullen">Welk probleem of welke vraag?</dd>
-                            <dt>Wat ik deed</dt>
-                            <dd class="invullen">Jouw concrete acties en de gebruikte technologie.</dd>
-                            <dt>Resultaat</dt>
-                            <dd class="invullen">Wat werkte er op het einde? Liefst meetbaar.</dd>
-                        </dl>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Bewijsstuk 4 -->
-        <section class="section slide bewijs" id="bewijs-4" hidden data-concept>
-            <div class="container">
-                <div class="row g-5 align-items-center">
-                    <div class="col-12 col-lg-6">
-                        <div class="bewijs-beeld invullen">Afbeelding: screenshot, schema of foto</div>
-                    </div>
-                    <div class="col-12 col-lg-6">
-                        <span class="bewijs-num">Bewijsstuk 04</span>
-                        <h2 class="bewijs-titel invullen">Titel van bewijsstuk 4</h2>
-                        <dl class="bewijs-info">
-                            <dt>Situatie</dt>
-                            <dd class="invullen">Welk probleem of welke vraag?</dd>
-                            <dt>Wat ik deed</dt>
-                            <dd class="invullen">Jouw concrete acties en de gebruikte technologie.</dd>
-                            <dt>Resultaat</dt>
-                            <dd class="invullen">Wat werkte er op het einde? Liefst meetbaar.</dd>
-                        </dl>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Bewijsstuk 5 -->
-        <section class="section slide bewijs" id="bewijs-5" hidden data-concept>
-            <div class="container">
-                <div class="row g-5 align-items-center">
-                    <div class="col-12 col-lg-6">
-                        <div class="bewijs-beeld invullen">Afbeelding: screenshot, schema of foto</div>
-                    </div>
-                    <div class="col-12 col-lg-6">
-                        <span class="bewijs-num">Bewijsstuk 05</span>
-                        <h2 class="bewijs-titel invullen">Titel van bewijsstuk 5</h2>
-                        <dl class="bewijs-info">
-                            <dt>Situatie</dt>
-                            <dd class="invullen">Welk probleem of welke vraag?</dd>
-                            <dt>Wat ik deed</dt>
-                            <dd class="invullen">Jouw concrete acties en de gebruikte technologie.</dd>
-                            <dt>Resultaat</dt>
-                            <dd class="invullen">Wat werkte er op het einde? Liefst meetbaar.</dd>
-                        </dl>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Bewijsstuk 6 -->
-        <section class="section slide bewijs" id="bewijs-6" hidden data-concept>
-            <div class="container">
-                <div class="row g-5 align-items-center">
-                    <div class="col-12 col-lg-6">
-                        <div class="bewijs-beeld invullen">Afbeelding: screenshot, schema of foto</div>
-                    </div>
-                    <div class="col-12 col-lg-6">
-                        <span class="bewijs-num">Bewijsstuk 06</span>
-                        <h2 class="bewijs-titel invullen">Titel van bewijsstuk 6</h2>
-                        <dl class="bewijs-info">
-                            <dt>Situatie</dt>
-                            <dd class="invullen">Welk probleem of welke vraag?</dd>
-                            <dt>Wat ik deed</dt>
-                            <dd class="invullen">Jouw concrete acties en de gebruikte technologie.</dd>
-                            <dt>Resultaat</dt>
-                            <dd class="invullen">Wat werkte er op het einde? Liefst meetbaar.</dd>
-                        </dl>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 05 — Ik als IT professional met PIT (± 5', 1 slide per rol) -->
-        <section class="section slide" id="rollen">
-            <div class="container">
-                <div class="row g-5 align-items-center">
-                    <div class="col-12 col-lg-5">
-                        <p class="section-label">05 — Mijn portfolio</p>
-                        <h2 class="section-title">Ik als IT professional met <strong>PIT.</strong></h2>
-                        <p class="lead-text">Vijf opleidingsrollen. Per rol de bewijsstukken die ik finaal selecteerde. Klik op een rol om ernaartoe te gaan.</p>
-                    </div>
-                    <div class="col-12 col-lg-7">
-                        <!-- Rollenwiel: IT professional in het midden, de vier rollen errond -->
-                        <svg class="rollen-wiel" viewBox="0 0 600 440" role="img" aria-labelledby="wiel-titel">
-                            <title id="wiel-titel">De vijf opleidingsrollen: IT professional in het midden, met netwerkbeheerder, systeembeheerder, ondersteuner en bouwer errond.</title>
-                            <g class="wiel-lijnen">
-                                <line x1="300" y1="220" x2="140" y2="80"/>
-                                <line x1="300" y1="220" x2="460" y2="80"/>
-                                <line x1="300" y1="220" x2="140" y2="360"/>
-                                <line x1="300" y1="220" x2="460" y2="360"/>
-                            </g>
-
-                            <a href="#rol-1" class="wiel-centrum">
-                                <circle cx="300" cy="220" r="92"/>
-                                <text x="300" y="214">IT</text>
-                                <text x="300" y="244">professional</text>
-                                <circle class="wiel-nr" cx="300" cy="128" r="20"/>
-                                <text class="wiel-nr-tekst" x="300" y="135">1</text>
-                            </a>
-
-                            <a href="#rol-2" class="wiel-rol">
-                                <rect x="20" y="50" width="240" height="60" rx="30"/>
-                                <text x="140" y="87">Netwerkbeheerder</text>
-                                <circle class="wiel-nr" cx="30" cy="50" r="20"/>
-                                <text class="wiel-nr-tekst" x="30" y="57">2</text>
-                            </a>
-
-                            <a href="#rol-3" class="wiel-rol">
-                                <rect x="340" y="50" width="240" height="60" rx="30"/>
-                                <text x="460" y="87">Systeembeheerder</text>
-                                <circle class="wiel-nr" cx="570" cy="50" r="20"/>
-                                <text class="wiel-nr-tekst" x="570" y="57">3</text>
-                            </a>
-
-                            <a href="#rol-4" class="wiel-rol">
-                                <rect x="20" y="330" width="240" height="60" rx="30"/>
-                                <text x="140" y="367">Ondersteuner</text>
-                                <circle class="wiel-nr" cx="30" cy="390" r="20"/>
-                                <text class="wiel-nr-tekst" x="30" y="397">4</text>
-                            </a>
-
-                            <a href="#rol-5" class="wiel-rol">
-                                <rect x="340" y="330" width="240" height="60" rx="30"/>
-                                <text x="460" y="367">Bouwer</text>
-                                <circle class="wiel-nr" cx="570" cy="390" r="20"/>
-                                <text class="wiel-nr-tekst" x="570" y="397">5</text>
-                            </a>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!--
-            ROL-SJABLOON
-            - "Wat de rol inhoudt" is een korte omschrijving: controleer die met de officiële omschrijving van je opleiding.
-            - Bewijzen per rol staan los van de werkplek-bewijsstukken (sectie 04): school, eigen projecten, certificaten, ervaring.
-        -->
-
-        <!-- Rol 1 — IT professional -->
-        <section class="section slide rol" id="rol-1">
-            <div class="container">
-                <div class="row g-5">
-                    <div class="col-12 col-lg-5">
-                        <span class="rol-nummer">1</span>
-                        <h2 class="rol-titel">IT professional</h2>
-                        <p class="lead-text">Professioneel handelen: plannen, communiceren met klanten en collega's, documenteren, verantwoordelijkheid nemen en blijven bijleren.</p>
-                        <!-- Netwerkschema van het eigen project (thuisnetwerk ouders) -->
-                        <a class="rol-foto" href="thuisnetwerk.html">
-                            <img class="bewijs-img" src="img/bewijs-thuisnetwerk.jpg" alt="Netwerkschema voor en na van het eigen project: het thuisnetwerk van mijn ouders beveiligen met een eigen firewall." width="695" height="668" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="col-12 col-lg-7">
-                        <h3 class="kaart-titel">Bewijzen voor deze rol</h3>
-                        <ul class="rol-bewijzen">
-                            <li><a class="project-link" href="thuisnetwerk.html"><span>Project</span> Thuisnetwerk ouders: problemen zelfstandig geanalyseerd, opgelost en gedocumenteerd</a></li>
-                            <li class="invullen">Ander bewijs, bv. communicatie met klant, planning, documentatie</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Rol 2 — Netwerkbeheerder -->
-        <section class="section slide rol" id="rol-2">
-            <div class="container">
-                <div class="row g-5">
-                    <div class="col-12 col-lg-5">
-                        <span class="rol-nummer">2</span>
-                        <h2 class="rol-titel">Netwerkbeheerder</h2>
-                        <p class="lead-text">Netwerken ontwerpen, configureren, beveiligen en beheren: switching, routing, VLANs, wifi en monitoring.</p>
-                    </div>
-                    <div class="col-12 col-lg-7">
-                        <h3 class="kaart-titel">Bewijzen voor deze rol</h3>
-                        <ul class="rol-bewijzen">
-                            <li><a class="project-link" href="thuisnetwerk.html"><span>Project</span> Thuisnetwerk ouders: firewall, bridge mode, DHCP, DNS over TLS en VPN</a></li>
-                            <li class="invullen">Ander bewijs, bv. CCNA, netwerkschema, configuratie</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Rol 3 — Systeembeheerder -->
-        <section class="section slide rol" id="rol-3">
-            <div class="container">
-                <div class="row g-5">
-                    <div class="col-12 col-lg-5">
-                        <span class="rol-nummer">3</span>
-                        <h2 class="rol-titel">Systeembeheerder</h2>
-                        <p class="lead-text">Servers en systemen installeren, configureren en onderhouden: Windows Server, Linux, Active Directory, virtualisatie en back-ups.</p>
-                    </div>
-                    <div class="col-12 col-lg-7">
-                        <h3 class="kaart-titel">Bewijzen voor deze rol</h3>
-                        <ul class="rol-bewijzen">
-                            <li><a class="project-link" href="thuisnetwerk.html"><span>Project</span> Thuisnetwerk ouders: firewall geïnstalleerd en beheerd, diensten en pakketten ingericht</a></li>
-                            <li class="invullen">Ander bewijs, bv. Linux-server, Active Directory</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Rol 4 — Ondersteuner -->
-        <section class="section slide rol" id="rol-4">
-            <div class="container">
-                <div class="row g-5">
-                    <div class="col-12 col-lg-5">
-                        <span class="rol-nummer">4</span>
-                        <h2 class="rol-titel">Ondersteuner</h2>
-                        <p class="lead-text">Gebruikers helpen: incidenten analyseren en oplossen, uitleg en opleiding geven, en oplossingen documenteren.</p>
-                    </div>
-                    <div class="col-12 col-lg-7">
-                        <h3 class="kaart-titel">Bewijzen voor deze rol</h3>
-                        <ul class="rol-bewijzen">
-                            <li><a class="project-link" href="thuisnetwerk.html"><span>Project</span> Thuisnetwerk ouders: wachtwoordmanager en MFA ingesteld en uitgelegd</a></li>
-                            <li class="invullen">Ander bewijs, bv. supporttickets, handleiding, opleiding gegeven</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Rol 5 — Bouwer -->
-        <section class="section slide rol" id="rol-5">
-            <div class="container">
-                <div class="row g-5">
-                    <div class="col-12 col-lg-5">
-                        <span class="rol-nummer">5</span>
-                        <h2 class="rol-titel">Bouwer</h2>
-                        <p class="lead-text">Oplossingen bouwen en automatiseren: scripts, infrastructuur en toepassingen opzetten en testen.</p>
-                    </div>
-                    <div class="col-12 col-lg-7">
-                        <h3 class="kaart-titel">Bewijzen voor deze rol</h3>
-                        <ul class="rol-bewijzen">
-                            <li><a href="https://yannickvanduppen.be"><span>+</span> Deze portfoliowebsite: HTML, Bootstrap, GitHub Pages, eigen domein en DNS</a></li>
-                            <li><a class="project-link" href="thuisnetwerk.html"><span>Project</span> Thuisnetwerk ouders: eigen script voor Dynamic DNS via de Cloudflare API</a></li>
-                            <li class="invullen">Ander bewijs, bv. PowerShell-script, automatisatie</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 06 — Reflectie en toekomst (± 2') -->
-        <section class="section slide" id="reflectie">
-            <div class="container">
-                <p class="section-label">06 — Reflectie</p>
-                <h2 class="section-title">Wat ik <strong>meeneem.</strong></h2>
+                <p class="section-label"><span class="nl">Wat ik doe</span><span class="en">What I do</span></p>
+                <h2 class="section-title"><span class="nl">Van netwerk tot</span><span class="en">From network to</span> <strong><span class="nl">gebruiker.</span><span class="en">end user.</span></strong></h2>
 
                 <div class="row g-4">
                     <div class="col-12 col-md-6 col-lg-3">
                         <div class="kaart h-100">
-                            <h3 class="kaart-titel">Technisch bijgeleerd</h3>
-                            <ul class="kaart-lijst">
-                                <li class="invullen">bv. een technologie die nieuw was</li>
-                                <li class="invullen">bv. iets wat je nu zelfstandig kunt</li>
+                            <h3 class="kaart-titel"><span class="kaart-num">1</span><span class="nl">Netwerken</span><span class="en">Networking</span></h3>
+                            <p><span class="nl">Netwerken opzetten, beveiligen en beheren.</span><span class="en">Designing, securing and managing networks.</span></p>
+                            <ul class="tags mt-0">
+                                <li>CCNA</li>
+                                <li>pfSense</li>
+                                <li>VLANs</li>
+                                <li>DNS</li>
+                                <li>VPN</li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-3">
                         <div class="kaart h-100">
-                            <h3 class="kaart-titel">Soft skills</h3>
-                            <ul class="kaart-lijst">
-                                <li class="invullen">bv. communicatie met klanten</li>
-                                <li class="invullen">bv. plannen en prioriteren</li>
+                            <h3 class="kaart-titel"><span class="kaart-num">2</span><span class="nl">Systemen</span><span class="en">Systems</span></h3>
+                            <p><span class="nl">Servers, gebruikers en werkplekken beheren.</span><span class="en">Managing servers, users and workstations.</span></p>
+                            <ul class="tags mt-0">
+                                <li>Linux</li>
+                                <li>Active Directory</li>
+                                <li>Microsoft 365</li>
+                                <li>Windows</li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-3">
                         <div class="kaart h-100">
-                            <h3 class="kaart-titel">Mijn sterkste rollen</h3>
-                            <!-- INVULLEN: kies je sterkste rollen -->
-                            <div class="d-flex flex-wrap gap-2">
-                                <a class="rol-badge invullen" href="#rol-1"><b>1</b> IT professional</a>
-                                <a class="rol-badge invullen" href="#rol-4"><b>4</b> Ondersteuner</a>
-                            </div>
-                            <p class="invullen mt-3">Waarom deze rollen? Eén zin.</p>
+                            <h3 class="kaart-titel"><span class="kaart-num">3</span>Security</h3>
+                            <p><span class="nl">Netwerken en accounts beschermen, en blijven bijleren.</span><span class="en">Protecting networks and accounts, and always learning.</span></p>
+                            <ul class="tags mt-0">
+                                <li>eJPT <span class="nl">(bezig)</span><span class="en">(in progress)</span></li>
+                                <li>TryHackMe</li>
+                                <li>Firewalls</li>
+                                <li>MFA</li>
+                            </ul>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-3">
                         <div class="kaart h-100">
-                            <h3 class="kaart-titel">Toekomst en acties</h3>
-                            <ul class="kaart-lijst">
-                                <li>eJPT behalen (INE Security)</li>
-                                <li class="invullen">bv. verder in cybersecurity</li>
-                                <li class="invullen">bv. CCNA-examen afleggen</li>
+                            <h3 class="kaart-titel"><span class="kaart-num">4</span><span class="nl">Analyse</span><span class="en">Analysis</span></h3>
+                            <p><span class="nl">De brug tussen klant en IT: van behoefte tot werkende oplossing.</span><span class="en">The bridge between client and IT: from business need to working solution.</span></p>
+                            <ul class="tags mt-0">
+                                <li><span class="nl">Functionele analyse</span><span class="en">Functional analysis</span></li>
+                                <li><span class="nl">Implementatie</span><span class="en">Implementation</span></li>
+                                <li>Support</li>
+                                <li><span class="nl">Documentatie</span><span class="en">Documentation</span></li>
                             </ul>
                         </div>
                     </div>
@@ -652,37 +226,90 @@
             </div>
         </section>
 
-        <!-- 07 — Discussie / vragen -->
+        <!-- Projecten -->
+        <section class="section slide" id="projecten">
+            <div class="container">
+                <p class="section-label"><span class="nl">Projecten</span><span class="en">Projects</span></p>
+                <h2 class="section-title"><span class="nl">Waar ik aan</span><span class="en">What I've been</span> <strong><span class="nl">bouw.</span><span class="en">building.</span></strong></h2>
+
+                <div class="row g-4">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="project">
+                            <span class="project-num">01</span>
+                            <h3><span class="nl">Thuisnetwerk beveiligen</span><span class="en">Securing a home network</span></h3>
+                            <p><span class="nl">Het netwerk van mijn ouders beveiligd met een eigen firewall (pfSense), DNS over TLS, ad- en malwareblokkering, een wachtwoordmanager en MFA.</span><span class="en">Secured my parents' home network with my own firewall (pfSense), DNS over TLS, ad and malware blocking, a password manager and MFA.</span></p>
+                            <ul class="tags">
+                                <li>pfSense</li>
+                                <li>DNS over TLS</li>
+                                <li>pfBlockerNG</li>
+                                <li>Tailscale</li>
+                            </ul>
+                            <a class="link-arrow d-inline-block mt-3" href="thuisnetwerk.html"><span class="nl">Bekijk project</span><span class="en">View project</span> <span aria-hidden="true">→</span></a>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="project">
+                            <span class="project-num">02</span>
+                            <h3><span class="nl">Deze website</span><span class="en">This website</span></h3>
+                            <p><span class="nl">Zelf gebouwd en gehost via GitHub Pages, op mijn eigen domein met zelf ingestelde DNS, HTTPS en e-mailbeveiliging (SPF, DMARC).</span><span class="en">Built and hosted myself on GitHub Pages, on my own domain with self-managed DNS, HTTPS and email security (SPF, DMARC).</span></p>
+                            <ul class="tags">
+                                <li>HTML</li>
+                                <li>Bootstrap</li>
+                                <li>GitHub Pages</li>
+                                <li>DNS</li>
+                            </ul>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="project">
+                            <span class="project-num">03</span>
+                            <h3><span class="nl">Op weg naar eJPT</span><span class="en">Road to eJPT</span></h3>
+                            <p><span class="nl">Een leerpad waarin ik bijhoud wat ik leer voor het eJPT-certificaat in penetration testing: uitleg, commando's en labs.</span><span class="en">A learning log of my journey to the eJPT penetration testing certification: concepts, commands and labs.</span></p>
+                            <ul class="tags">
+                                <li>Penetration testing</li>
+                                <li>INE Security</li>
+                            </ul>
+                            <p class="mt-3 mb-0"><span class="cv-status"><span class="nl">Binnenkort</span><span class="en">Coming soon</span></span></p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
         <section class="section slide contact" id="contact">
             <div class="container">
                 <div class="row g-5 align-items-center">
                     <div class="col-12 col-lg-6">
-                        <p class="section-label">07 — Discussie</p>
-                        <h2 class="contact-title">Bedankt. <strong>Vragen?</strong></h2>
-                        <p class="lead-text mb-4">Dit portfolio blijft online op yannickvanduppen.be.</p>
+                        <p class="section-label">Contact</p>
+                        <h2 class="contact-title"><span class="nl">Laten we</span><span class="en">Let's</span> <strong><span class="nl">kennismaken.</span><span class="en">connect.</span></strong></h2>
+                        <p class="lead-text mb-4"><span class="nl">Een vraag, een project of een kans? Stuur me gerust een berichtje.</span><span class="en">A question, a project or an opportunity? Feel free to reach out.</span></p>
                         <div class="d-flex flex-wrap align-items-center gap-3">
-                            <a class="btn-pill btn-pill-dark" href="mailto:vanduppenyannick@gmail.com">Stuur me een mail</a>
+                            <a class="btn-pill btn-pill-dark" href="mailto:vanduppenyannick@gmail.com"><span class="nl">Stuur me een mail</span><span class="en">Send me an email</span></a>
                             <a class="btn-pill" href="https://www.linkedin.com/in/yannick-van-duppen-5a72b3284/" target="_blank" rel="noopener">LinkedIn</a>
-                            <a class="btn-pill" href="cv.html">Bekijk mijn CV</a>
+                            <a class="btn-pill" href="cv.html"><span class="nl">Bekijk mijn CV</span><span class="en">View my CV</span></a>
                         </div>
                         <p class="contact-mail">vanduppenyannick@gmail.com</p>
                     </div>
 
-                    <!-- Afsluiter: ping naar de jury -->
+                    <!-- Afsluiter: ping naar de bezoeker -->
                     <div class="col-12 col-lg-6">
-                        <div class="terminal" role="img" aria-label="Ping naar de jury: bedankt voor jullie aandacht, vragen zijn welkom.">
+                        <div class="terminal" role="img"
+                             aria-label="Ping: bedankt voor je bezoek, ik antwoord graag via mail of LinkedIn."
+                             data-aria-nl="Ping: bedankt voor je bezoek, ik antwoord graag via mail of LinkedIn."
+                             data-aria-en="Ping: thanks for stopping by, happy to reply by email or LinkedIn.">
                             <div class="terminal-balk">
                                 <span></span><span></span><span></span>
                                 <span class="terminal-titel">Windows PowerShell</span>
                             </div>
                             <div class="terminal-body">
-                                <div><span class="t-prompt">PS C:\Users\yannick&gt;</span> <span class="t-cmd">ping jury</span></div>
-                                <div class="t-leeg"></div>
-                                <div class="t-dim">Pinging jury with 32 bytes of data:</div>
-                                <div class="stap">Reply from yannick: <span class="t-ok">Bedankt voor jullie aandacht!</span></div>
-                                <div class="stap">Reply from yannick: <span class="t-ok">Vragen? Ik luister.</span></div>
-                                <div class="t-leeg stap"></div>
-                                <div class="t-dim stap">Ping statistics for jury:</div>
+                                <div><span class="t-prompt">PS C:\Users\yannick&gt;</span> <span class="t-cmd">ping you</span></div>
+                                <div class="t-dim">Pinging you with 32 bytes of data:</div>
+                                <div class="stap">Reply from yannick: <span class="t-ok"><span class="nl">Bedankt voor je bezoek!</span><span class="en">Thanks for stopping by!</span></span></div>
+                                <div class="stap">Reply from yannick: <span class="t-ok"><span class="nl">Mail of LinkedIn? Ik antwoord graag.</span><span class="en">Email or LinkedIn? Happy to reply.</span></span></div>
+                                <div class="t-dim stap">Ping statistics for you:</div>
                                 <div class="t-dim stap">&nbsp;&nbsp;&nbsp;&nbsp;Packets: Sent = 2, Received = 2, Lost = 0 (0% loss)</div>
                             </div>
                         </div>
