@@ -778,6 +778,31 @@ body.presentatie .concept-balk {
     object-fit: cover;
 }
 
+/* Foto van mij op de titelslide (CV-site) */
+.hero-foto {
+    display: block;
+    width: min(100%, 340px);
+    height: auto;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+    object-fit: cover;
+    border: 2px solid var(--line);
+    border-radius: 50%;
+    box-shadow: 10px 10px 0 var(--primary);
+}
+
+/* Klein logo in de footer */
+.footer-merk {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.footer-logo {
+    width: auto;
+    height: 28px;
+}
+
 /* Mijn logo op de titelslide */
 .hero-logo {
     display: block;
@@ -949,6 +974,78 @@ body.presentatie .concept-balk {
     color: var(--primary);
 }
 
+/* Kringloop van de lifecycle (analyseren → bouwen → testen) */
+.cyclus {
+    display: block;
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    margin-top: 1.5rem;
+    font-family: var(--font);
+}
+
+.cyclus .boog {
+    fill: none;
+    stroke: var(--ink);
+    stroke-width: 2;
+}
+
+.cyclus .pijlpunt {
+    fill: var(--ink);
+}
+
+.cyclus .knoop rect {
+    stroke: var(--ink);
+    stroke-width: 2;
+}
+
+.cyclus .knoop-ik rect {
+    fill: var(--primary);
+}
+
+.cyclus .knoop-dev rect {
+    fill: var(--surface);
+}
+
+.cyclus .label {
+    fill: var(--ink);
+    font-size: 15px;
+    font-weight: 700;
+    text-anchor: middle;
+}
+
+.cyclus .sub {
+    fill: var(--ink);
+    opacity: 0.65;
+    font-size: 11px;
+    text-anchor: middle;
+}
+
+.cyclus .midden {
+    fill: var(--muted);
+    font-size: 13px;
+    font-weight: 500;
+    text-anchor: middle;
+}
+
+.cyclus .midden-icoon {
+    fill: var(--ink);
+    font-size: 26px;
+    text-anchor: middle;
+}
+
+.cyclus .bol {
+    fill: var(--accent);
+    stroke: var(--ink);
+    stroke-width: 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cyclus .bol {
+        display: none;
+    }
+}
+
 /* "Wat ik doe": eenvoudige lijst van taken (CV-site) */
 .taken {
     margin: 0;
@@ -958,7 +1055,7 @@ body.presentatie .concept-balk {
     display: grid;
     grid-template-columns: 1fr;
     gap: 0.15rem;
-    padding: 0.85rem 0;
+    padding: 0.6rem 0;
     border-bottom: 1px solid var(--line-soft);
 }
 
