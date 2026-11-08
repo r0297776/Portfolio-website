@@ -949,7 +949,56 @@ body.presentatie .concept-balk {
     color: var(--primary);
 }
 
-/* Pijlen tussen de drie stappen van de werkplekopdracht (vanaf tablet) */
+/* "Wat ik doe": eenvoudige lijst van taken (CV-site) */
+.taken {
+    margin: 0;
+}
+
+.taken div {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--line-soft);
+}
+
+.taken div:first-child {
+    border-top: 2px solid var(--line);
+}
+
+.taken dt {
+    font-weight: 700;
+}
+
+.taken dd {
+    margin: 0;
+    color: var(--muted);
+}
+
+.daarnaast {
+    margin: 1.5rem 0 0;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.daarnaast strong {
+    color: var(--ink);
+}
+
+@media (min-width: 768px) {
+    .taken div {
+        grid-template-columns: 11rem 1fr;
+        gap: 1rem;
+    }
+}
+
+/* Technische basis: brede kaart onder de drie stappen */
+.technische-basis {
+    background: transparent;
+    border-style: dashed;
+}
+
+/* Pijlen tussen drie stappen (werkplekopdracht, "Wat ik doe"), vanaf tablet */
 @media (min-width: 768px) {
     .opdracht-stappen > div:not(:last-child) .kaart {
         position: relative;
