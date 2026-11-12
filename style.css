@@ -887,8 +887,18 @@ body.presentatie .concept-balk {
 }
 
 .wie-feiten dd {
+    min-width: 0;
     margin: 0;
     font-weight: 500;
+    overflow-wrap: anywhere;
+}
+
+/* Voetnoot bij een feit (bv. de bachelor) */
+.feit-noot {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--muted);
 }
 
 .stats {
@@ -1523,4 +1533,191 @@ body.presentatie .stap.getoond {
     * {
         transition: none !important;
     }
+}
+
+/* ===== Loopbaan op "Over mij" (vervangt de tracert op de cv-site) ===== */
+.loopbaan {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.loopbaan li {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+    padding: 0 0 1.1rem 1.6rem;
+}
+
+/* Verticale lijn */
+.loopbaan li::before {
+    content: "";
+    position: absolute;
+    left: 0.4rem;
+    top: 0.5rem;
+    bottom: -0.5rem;
+    width: 2px;
+    background: var(--line-soft);
+}
+
+.loopbaan li:last-child {
+    padding-bottom: 0;
+}
+
+.loopbaan li:last-child::before {
+    display: none;
+}
+
+/* Bolletje: gevuld grijsblauw = IT, hol = buiten IT (zoals de tijdlijn op cv.html) */
+.loopbaan li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.3rem;
+    width: 0.95rem;
+    height: 0.95rem;
+    border: 2px solid var(--line);
+    border-radius: 50%;
+    background: var(--surface);
+}
+
+.loopbaan li.is-it::after {
+    background: var(--primary);
+}
+
+.loopbaan li.is-nu::after {
+    box-shadow: 0 0 0 4px rgba(156, 180, 188, 0.35);
+}
+
+.loopbaan-jaar {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+}
+
+.loopbaan strong {
+    display: block;
+    font-weight: 700;
+}
+
+.loopbaan-org {
+    display: block;
+    color: var(--muted);
+}
+
+.loopbaan-noot {
+    display: block;
+    font-size: 0.8rem;
+}
+
+@media (min-width: 576px) {
+    .loopbaan li {
+        grid-template-columns: 7rem 1fr;
+        gap: 1rem;
+    }
+}
+
+.hobby-regel {
+    margin: 1.25rem 0 0;
+    color: var(--muted);
+}
+
+.hobby-regel strong {
+    color: var(--ink);
+}
+/* ===== Wiel met 6 stappen bij "Wat ik doe" (vervangt de kringloop met 3 knopen) ===== */
+.cyclus .stuk path {
+    stroke: var(--ink);
+    stroke-width: 2;
+    stroke-linejoin: round;
+}
+
+.cyclus .stuk-ik path {
+    fill: var(--primary);
+}
+
+.cyclus .stuk-dev path {
+    fill: var(--surface);
+}
+
+.cyclus .nr {
+    fill: var(--ink);
+    font-size: 12px;
+    font-weight: 700;
+    text-anchor: middle;
+}
+
+.cyclus .stuk .label {
+    font-size: 13.5px;
+}
+
+.cyclus .kern {
+    fill: var(--surface);
+    stroke: var(--ink);
+    stroke-width: 2;
+}
+
+.cyclus-legende {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.25rem;
+    max-width: 340px;
+    margin: 0.75rem 0 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.cyclus-legende > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.cyclus-legende i {
+    flex-shrink: 0;
+    width: 0.9rem;
+    height: 0.9rem;
+    border: 2px solid var(--ink);
+    border-radius: 3px;
+}
+
+.cyclus-legende .vol {
+    background: var(--primary);
+}
+
+.cyclus-legende .hol {
+    background: var(--surface);
+}
+/* In presentatiemodus iets kleiner, zodat "Wat ik doe" op één scherm past */
+.presentatie .cyclus {
+    max-width: 250px;
+    margin-top: 1rem;
+}
+/* Eindpunt onder het wiel: go-live gebeurt niet elke fase, wel op het einde */
+.cyclus-einde {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    max-width: 340px;
+    margin: 0.75rem 0 0;
+    padding: 0.55rem 0.9rem;
+    border: 2px solid var(--line);
+    border-radius: 1rem;
+    background: var(--primary);
+    font-size: 0.9rem;
+}
+
+.cyclus-einde .pijl {
+    font-weight: 700;
+}
+
+.cyclus-einde strong {
+    font-weight: 700;
+}
+
+.presentatie .cyclus-einde {
+    margin-top: 0.5rem;
+    padding: 0.35rem 0.8rem;
 }
